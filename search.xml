@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/02/04/Hello-World/"/>
+      <url>/2019/02/04/Hello-World/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Hello-World！"><a href="#Hello-World！" class="headerlink" title="Hello World！"></a>Hello World！</h1><hr><p>这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。</p><pre class=" language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span> </span>    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdlib></span></span>    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>    <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span> </code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
