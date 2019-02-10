@@ -4,11 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, iSecloud&#39;s Blog">
-    <meta name="description" content="Hello World！
-这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。
-    #include&amp;lt;cstdio&gt;
-    #include&amp;">
+    <meta name="keywords" content="POI200 7ZAP-Queries, iSecloud&#39;s Blog">
+    <meta name="description" content="[POI2007]ZAP-Queries标签： 数学 莫比乌斯反演
+
+题目描述FGD正在破解一段密码，他需要回答很多类似的问题：对于给定的整数a,b和d，有多少正整数对x,y，满足1&amp;lt;=x&amp;lt;=a，1&amp;lt;=y&amp;lt;=b，并且">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | iSecloud&#39;s Blog</title>
+    <title>POI200 7ZAP-Queries | iSecloud&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +278,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        POI200 7ZAP-Queries
                     </div>
                 </div>
             </div>
@@ -307,12 +306,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/test/" target="_blank">
-                                <span class="chip bg-color">test</span>
+                            <a href="/tags/数学/" target="_blank">
+                                <span class="chip bg-color">数学</span>
                             </a>
                         
-                            <a href="/tags/Markdown/" target="_blank">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/莫比乌斯反演/" target="_blank">
+                                <span class="chip bg-color">莫比乌斯反演</span>
                             </a>
                         
                     </div>
@@ -335,21 +334,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-04
+                    2019-02-10
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        71
+                        648
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -365,20 +364,63 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hello-World！"><a href="#Hello-World！" class="headerlink" title="Hello World！"></a>Hello World！</h1><hr>
-<p>这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。</p>
-<pre class=" language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
-    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span> </span>
-    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdlib></span></span>
-    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
-    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+                <h1 id="POI2007-ZAP-Queries"><a href="#POI2007-ZAP-Queries" class="headerlink" title="[POI2007]ZAP-Queries"></a>[POI2007]ZAP-Queries</h1><p>标签： 数学 莫比乌斯反演</p>
+<hr>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>FGD正在破解一段密码，他需要回答很多类似的问题：对于给定的整数a,b和d，有多少正整数对x,y，满足1&lt;=x&lt;=a，1&lt;=y&lt;=b，并且gcd（x, y）=d。作为FGD的同学，FGD希望得到你的帮助。</p>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><p>输入格式：<br>The first line of the standard input contains one integer nnn (1≤n≤50 000),denoting the number of queries.</p>
+<p>The following nnn lines contain three integers each: aaa, bbb and ddd(1≤d≤a,b≤50 000), separated by single spaces.</p>
+<p>Each triplet denotes a single query.</p>
+<p>输出格式：<br>Your programme should write nnn lines to the standard output. The i’th line should contain a single integer: theanswer to the iii’th query from the standard input.</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p>输入样例#1：<br>2<br>4 5 2<br>6 4 3<br>输出样例#1：<br>3<br>2</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>最近在学习莫比（懵逼）乌斯反演，这道题应该算是入门题了吧。<br>根据dalao们说按照套路我们设:<br>$$f(x)=\sum_{i = 1}^{a}\sum_{j = 1}^{b}[gcd(i, j) = x]$$<br>$$F(x)=\sum_{x|n}f(n)=\left \lfloor \frac{a}{n} \right \rfloor\left \lfloor \frac{b}{n} \right \rfloor$$<br>通俗点说，即我们设$f(x):gcd(i, j) = x的对数$.<br>设$F(x):gcd(i, j) = x 和 x倍数的对数$<br>然后就是化简式子:<br>$Ans = f(x)$<br>$Ans = \sum_{x|n}u(\frac{n}{x})F(n)$（莫比乌斯反演）<br>更改枚举项为$\frac{n}{x}$<br>$$Ans = \sum_{p = 1}^{min(\left \lfloor \frac{a}{x} \right \rfloor, \left \lfloor \frac{b}{x} \right \rfloor)} u(p)F(xp)$$<br>化简到这里，我们就可以在O(n)的时间做出这道题了,如果有多组数据那么我们需要用整除分块（这个可以百度）</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdlib></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> N 60010</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ll long long</span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-    <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">int</span> n<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> d<span class="token punctuation">,</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> pri<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> u<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> sum<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">bool</span> vis<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> t <span class="token operator">=</span> N <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">;</span> u<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> 
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>vis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> pri<span class="token punctuation">[</span><span class="token operator">++</span> cnt<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">,</span> u<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> cnt <span class="token operator">&amp;&amp;</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">*</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> j <span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            vis<span class="token punctuation">[</span>i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> u<span class="token punctuation">[</span>i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span>u<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> sum<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> u<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>n <span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        ll ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">,</span> <span class="token operator">&amp;</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> t <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>a <span class="token operator">/</span> d<span class="token punctuation">,</span> b <span class="token operator">/</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">;</span> l <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> l <span class="token operator">=</span> r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            r <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a <span class="token operator">/</span> d<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>a <span class="token operator">/</span> d<span class="token punctuation">)</span> <span class="token operator">/</span> l<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>b <span class="token operator">/</span> d<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>b <span class="token operator">/</span> d<span class="token punctuation">)</span> <span class="token operator">/</span> l<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ans <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1ll</span> <span class="token operator">*</span> <span class="token punctuation">(</span>sum<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">-</span> sum<span class="token punctuation">[</span>l <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>a <span class="token operator">/</span> <span class="token punctuation">(</span>d <span class="token operator">*</span> l<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>b <span class="token operator">/</span> <span class="token punctuation">(</span>d <span class="token operator">*</span> l<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld\n"</span><span class="token punctuation">,</span> ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
 </code></pre>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>感觉莫比乌斯反演的题目特别考察式子的化简，特别是更改枚举项之类的，还是要做多题来积累化简式子的能力</p>
 
             </div>
             <hr>
@@ -402,7 +444,7 @@
                     </span>
                     <a href="https://isecloud.github.io" class="b-link-green">iSecloud's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/04/Hello-World/" class="b-link-green">Hello World</a>
+                    <a href="/2019/02/10/POI2007-ZAP-Queries/" class="b-link-green">POI200 7ZAP-Queries</a>
                 </p>
             </div>
         </div>
@@ -424,7 +466,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-02-04T11-01-23',
+        id: '2019-02-10T16-17-49',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -443,7 +485,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Mon Feb 04 2019 11:01:23 GMT+0800',
+    id: 'Sun Feb 10 2019 16:17:49 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -469,7 +511,60 @@ gitment.render('gitment-content');
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/02/10/POI2007-ZAP-Queries/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="POI200 7ZAP-Queries">
+                        
+                        <span class="card-title">POI200 7ZAP-Queries</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">[POI2007]ZAP-Queries标签： 数学 莫比乌斯反演
+
+题目描述FGD正在破解一段密码，他需要回答很多类似的问题：对于给定的整数a,b和d，有多少正整数对x,y，满足1&lt;=x&lt;=a，1&lt;=y&lt;=b，并且</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category" target="_blank">
+                                    Markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/数学/" target="_blank">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                    <a href="/tags/莫比乌斯反演/" target="_blank">
+                        <span class="chip bg-color">莫比乌斯反演</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/02/08/Magic-Stones-CodeForces-1110E-（思维-差分）/">
                     <div class="card-image">
@@ -485,9 +580,9 @@ gitment.render('gitment-content');
 
 题目描述Grigory has nn magic stones, conveniently numbered from 11 to nn. </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -513,59 +608,6 @@ gitment.render('gitment-content');
                     
                     <a href="/tags/差分/" target="_blank">
                         <span class="chip bg-color">差分</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/02/04/Hello-World/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">Hello World！
-这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。
-    #include&lt;cstdio>
-    #include&</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Markdown/" class="post-category" target="_blank">
-                                    Markdown
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/test/" target="_blank">
-                        <span class="chip bg-color">test</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/" target="_blank">
-                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
