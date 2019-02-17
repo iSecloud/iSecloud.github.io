@@ -4,10 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Magic Stones CodeForces - 1110E （思维+差分）, iSecloud&#39;s Blog">
-    <meta name="description" content="Magic Stones CodeForces - 1110E （思维+差分）标签： 思维 差分
+    <meta name="keywords" content="[CQOI2015]选数, iSecloud&#39;s Blog">
+    <meta name="description" content="[CQOI2015]选数标签：数学 莫比乌斯反演 快速幂
 
-题目描述Grigory has nn magic stones, conveniently numbered from 11 to nn. ">
+待更新…
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Magic Stones CodeForces - 1110E （思维+差分） | iSecloud&#39;s Blog</title>
+    <title>[CQOI2015]选数 | iSecloud&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -278,13 +279,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/31.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Magic Stones CodeForces - 1110E （思维+差分）
+                        [CQOI2015]选数
                     </div>
                 </div>
             </div>
@@ -306,16 +307,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/codeforces/" target="_blank">
-                                <span class="chip bg-color">codeforces</span>
+                            <a href="/tags/数学/" target="_blank">
+                                <span class="chip bg-color">数学</span>
                             </a>
                         
-                            <a href="/tags/思维/" target="_blank">
-                                <span class="chip bg-color">思维</span>
+                            <a href="/tags/莫比乌斯反演/" target="_blank">
+                                <span class="chip bg-color">莫比乌斯反演</span>
                             </a>
                         
-                            <a href="/tags/差分/" target="_blank">
-                                <span class="chip bg-color">差分</span>
+                            <a href="/tags/快速幂/" target="_blank">
+                                <span class="chip bg-color">快速幂</span>
                             </a>
                         
                     </div>
@@ -338,21 +339,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-08
+                    2019-02-18
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        611
+                        19
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        1 分
                     </div>
                     
                 
@@ -368,57 +369,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Magic-Stones-CodeForces-1110E-（思维-差分）"><a href="#Magic-Stones-CodeForces-1110E-（思维-差分）" class="headerlink" title="Magic Stones CodeForces - 1110E （思维+差分）"></a>Magic Stones CodeForces - 1110E （思维+差分）</h1><p>标签： 思维 差分</p>
+                <h1 id="CQOI2015-选数"><a href="#CQOI2015-选数" class="headerlink" title="[CQOI2015]选数"></a>[CQOI2015]选数</h1><p>标签：数学 莫比乌斯反演 快速幂</p>
 <hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Grigory has nn magic stones, conveniently numbered from 11 to nn. The charge of the ii-th stone is equal to ci.</p>
-<p>Sometimes Grigory gets bored and selects some inner stone (that is, some stone with index i, where 2≤i≤n−1), and after that synchronizes it with neighboring stones. After that, the chosen stone loses its own charge, but acquires the charges from neighboring stones. In other words, its charge ci changes to c<sub>i</sub>=c<sub>i+1</sub>+c<sub>i−1</sub>−c<sub>i</sub>.</p>
-<p>Andrew, Grigory’s friend, also has nn stones with charges titi. Grigory is curious, whether there exists a sequence of zero or more synchronization operations, which transforms charges of Grigory’s stones into charges of corresponding Andrew’s stones, that is, changes ci into ti for all i?<br>Input</p>
-<p>The first line contains one integer n (2≤n≤10<sup>5</sup>) — the number of magic stones.</p>
-<p>The second line contains integers c1,c2,…,cn(0≤ci≤2⋅10<sup>9</sup>) — the charges of Grigory’s stones.</p>
-<p>The second line contains integers t1,t2,…,tn(0≤ti≤2⋅10<sup>9</sup>) — the charges of Andrew’s stones.<br>Output</p>
-<p>If there exists a (possibly empty) sequence of synchronization operations, which changes all charges to the required ones, print “Yes”.</p>
-<p>Otherwise, print “No”.<br>Examples<br>input<br>4<br>7 2 4 12<br>7 15 10 12</p>
-<p>output<br>Yes</p>
-<p>input<br>3<br>4 4 4<br>1 2 3</p>
-<p>output<br>No</p>
-<p>Note</p>
-<p>In the first example, we can perform the following synchronizations (1-indexed):</p>
-<pre><code>First, synchronize the third stone [7,2,4,12]→[7,2,10,12][7,2,4,12]→[7,2,10,12].
-Then synchronize the second stone: [7,2,10,12]→[7,15,10,12][7,2,10,12]→[7,15,10,12].
-</code></pre><p>In the second example, any operation with the second stone will not change its charge</p>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>可以发现即使进行了操作，数字之间两两差分的值组成的序列是不会变的，变的只是顺序。并且经过足够多的操作之后也肯定会变回原序列。<br>所以我们只需要对原来两个序列分别计算出差分序列，排序后看是否相等即可（注意原序列头尾两个数字也必须相等）</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdlib></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
-<span class="token macro property">#<span class="token directive keyword">define</span> N 100010</span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">int</span> n<span class="token punctuation">;</span>
-<span class="token keyword">int</span> a<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> a1<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> b<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> b1<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token keyword">bool</span> <span class="token function">judge</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> b<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> a<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">!=</span> b<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>a1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> b1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>    
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> a1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> b1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> b<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token function">sort</span><span class="token punctuation">(</span>a1 <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> a1 <span class="token operator">+</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">sort</span><span class="token punctuation">(</span>b1 <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> b1 <span class="token operator">+</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">judge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Yes"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"No"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span> 
-</code></pre>
-<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>考场上没想出来，看了题解才知道的。<br>以后看到类似于相邻两数相减(或者其他操作之类的)，都可以用差分的思想去思考一下。</p>
+<p>待更新…</p>
 
             </div>
             <hr>
@@ -442,7 +395,7 @@ Then synchronize the second stone: [7,2,10,12]→[7,15,10,12][7,2,10,12]→[7,15
                     </span>
                     <a href="https://isecloud.github.io" class="b-link-green">iSecloud's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/08/Magic-Stones-CodeForces-1110E-（思维-差分）/" class="b-link-green">Magic Stones CodeForces - 1110E （思维+差分）</a>
+                    <a href="/2019/02/18/CQOI2015-选数/" class="b-link-green">[CQOI2015]选数</a>
                 </p>
             </div>
         </div>
@@ -464,7 +417,7 @@ Then synchronize the second stone: [7,2,10,12]→[7,15,10,12][7,2,10,12]→[7,15
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-02-08T15-12-40',
+        id: '2019-02-18T00-06-54',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -483,7 +436,7 @@ Then synchronize the second stone: [7,2,10,12]→[7,15,10,12][7,2,10,12]→[7,15
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Feb 08 2019 15:12:40 GMT+0800',
+    id: 'Mon Feb 18 2019 00:06:54 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -509,25 +462,83 @@ gitment.render('gitment-content');
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/10/POI2007-ZAP-Queries/">
+                <a href="/2019/02/18/CQOI2015-选数/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="POI200 7ZAP-Queries">
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="[CQOI2015]选数">
                         
-                        <span class="card-title">POI200 7ZAP-Queries</span>
+                        <span class="card-title">[CQOI2015]选数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">[POI2007]ZAP-Queries标签： 数学 莫比乌斯反演
+                    <div class="summary">[CQOI2015]选数标签：数学 莫比乌斯反演 快速幂
 
-题目描述FGD正在破解一段密码，他需要回答很多类似的问题：对于给定的整数a,b和d，有多少正整数对x,y，满足1&lt;=x&lt;=a，1&lt;=y&lt;=b，并且</div>
+待更新…
+</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-10
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category" target="_blank">
+                                    Markdown
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/数学/" target="_blank">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                    <a href="/tags/莫比乌斯反演/" target="_blank">
+                        <span class="chip bg-color">莫比乌斯反演</span>
+                    </a>
+                    
+                    <a href="/tags/快速幂/" target="_blank">
+                        <span class="chip bg-color">快速幂</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/02/17/SDOI2014-数表/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="[SDOI2014]数表">
+                        
+                        <span class="card-title">[SDOI2014]数表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">[SDOI2014]数表标签：数学 莫比乌斯反演 树状数组 
+
+题目描述有一张N*m的数表，其第i行第j列（1 &lt; =i &lt; =n，1 &lt; =j &lt; =m）的数值为能同时整除i和j的所有自然数之和。给定a，计算数表中</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -551,56 +562,8 @@ gitment.render('gitment-content');
                         <span class="chip bg-color">莫比乌斯反演</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/02/04/Hello-World/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">Hello World！
-这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。
-    #include&lt;cstdio>
-    #include&</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Markdown/" class="post-category" target="_blank">
-                                    Markdown
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/test/" target="_blank">
-                        <span class="chip bg-color">test</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/" target="_blank">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/树状数组/" target="_blank">
+                        <span class="chip bg-color">树状数组</span>
                     </a>
                     
                 </div>
@@ -617,6 +580,13 @@ gitment.render('gitment-content');
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
