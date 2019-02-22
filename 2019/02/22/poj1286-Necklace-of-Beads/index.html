@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="[CQOI2015]选数, iSecloud&#39;s Blog">
-    <meta name="description" content="[CQOI2015]选数标签：数学 莫比乌斯反演 快速幂
+    <meta name="keywords" content="poj1286--Necklace of Beads, iSecloud&#39;s Blog">
+    <meta name="description" content="poj1286–Necklace of Beads标签：数学 置换 polya定理
 
-待更新…
-">
+题目描述给出三种颜色红绿蓝，对一串n（n&amp;lt;24）个小球的环染色，环可以旋转和翻转，问最终可能有多少不同的染色方案。
+输入输出格式InputThe i">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>[CQOI2015]选数 | iSecloud&#39;s Blog</title>
+    <title>poj1286--Necklace of Beads | iSecloud&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +279,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/31.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        [CQOI2015]选数
+                        poj1286--Necklace of Beads
                     </div>
                 </div>
             </div>
@@ -311,12 +311,12 @@
                                 <span class="chip bg-color">数学</span>
                             </a>
                         
-                            <a href="/tags/莫比乌斯反演/" target="_blank">
-                                <span class="chip bg-color">莫比乌斯反演</span>
+                            <a href="/tags/置换/" target="_blank">
+                                <span class="chip bg-color">置换</span>
                             </a>
                         
-                            <a href="/tags/快速幂/" target="_blank">
-                                <span class="chip bg-color">快速幂</span>
+                            <a href="/tags/polya定理/" target="_blank">
+                                <span class="chip bg-color">polya定理</span>
                             </a>
                         
                     </div>
@@ -339,21 +339,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-18
+                    2019-02-22
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        19
+                        750
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -369,9 +369,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CQOI2015-选数"><a href="#CQOI2015-选数" class="headerlink" title="[CQOI2015]选数"></a>[CQOI2015]选数</h1><p>标签：数学 莫比乌斯反演 快速幂</p>
+                <h1 id="poj1286–Necklace-of-Beads"><a href="#poj1286–Necklace-of-Beads" class="headerlink" title="poj1286–Necklace of Beads"></a>poj1286–Necklace of Beads</h1><p>标签：数学 置换 polya定理</p>
 <hr>
-<p>待更新…</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给出三种颜色红绿蓝，对一串n（n&lt;24）个小球的环染色，环可以旋转和翻转，问最终可能有多少不同的染色方案。</p>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><p>Input<br>The input has several lines, and each line contains the input data n.<br>-1 denotes the end of the input file.</p>
+<p>Output<br>The output should contain the output data: Number of different forms, in each line correspondent to the input data.</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p>Sample Input<br>4<br>5<br>-1<br>Sample Output<br>21<br>39</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>首先给出两个定理:<br>Burnside引理:<br>$$\frac{1}{\left | G \right |}\sum_{i=1}^{n}D(a_{i})$$<br>其中G表示置换种类（需要记住的是不变置换也算一种置换）<br>$D(a_{i})$表示在i置换下不动点的个数<br>Polya定理:<br>$$\frac{1}{\left | G \right |}\sum_{i=1}^{n}m^{c(g_{i})}$$<br>其中m表示染色种类，$c(g_{i})$表示在第i种置换下的循环节个数<br>这里有一个讲得比较好的<a href="https://wenku.baidu.com/view/bf92a95f804d2b160b4ec0be.html" target="_blank" rel="noopener">文库</a><del>可惜我没有下载券不能下载…</del><br>那么对于这道题来说要分两种情况:<br>1.旋转<br>对于旋转一共有0~n-1共n种置换,对于旋转i,它的循环节为gcd（n,i）,这个可以找找规律发现，也可以通过证明:<br>假设每次增量为p,最少走了k步又回到原点:<br>则kp % n = 0 而 kp % p = 0且k为最少,故kp是n,p的最小公倍数，kp = lcm（n,p）<br>那么每次走了kp / p = lcm（n, p） / p = k步<br>那么一共走了n / （lcm（n,p）/ p） = np / lcm（n,p）= gcd（n,p）次<br>所以循环节是gcd（n,p）。<br>所以$Ans = Ans + \sum_{i=0}^{n-1}3^{gcd(n,i)}$<br>2.翻转<br>这里要分奇偶讨论:<br>（1）偶数<br>这里存在两种对称方式，如图:<br><img src="https://cdn.luogu.org/upload/pic/52453.png" alt="翻转"><br>一种是一条对称轴穿过两个点，此时有n/2种置换，对于每种置换有n/2 + 1个循环节<br>另一种是一条对称轴穿过两点之间，此时有n/2种置换，对于每种置换有n/2个循环节<br>（2）奇数<br>这里就只有一种对称方式了,选每个点作为对称点共有n中置换,对于每个置换有n/2 + 1个循环节<br>最后Ans除以G（2n中置换）即可</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdlib></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ll long long</span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token operator">!</span>b <span class="token operator">?</span> a <span class="token operator">:</span> <span class="token function">gcd</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> a <span class="token operator">%</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+
+ll <span class="token function">pow_mul</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ll ans <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>b <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span> ans <span class="token operator">=</span> ans <span class="token operator">*</span> a<span class="token punctuation">;</span>
+        a <span class="token operator">=</span> a <span class="token operator">*</span> a<span class="token punctuation">;</span>
+        b <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> n <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        ll ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"0\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">continue</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> 
+            ans <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">pow_mul</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token function">gcd</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            ans <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">pow_mul</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> n <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> n<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>    
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            ans <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">pow_mul</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ans <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">pow_mul</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> n <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld\n"</span><span class="token punctuation">,</span> ans <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>运用polya定理主要是找出循环节，但是值得注意的是，polya定理不能受到颜色数量的限制，否则只能用Burnside引理，而且注意要包括不变置换。</p>
 
             </div>
             <hr>
@@ -395,7 +445,7 @@
                     </span>
                     <a href="https://isecloud.github.io" class="b-link-green">iSecloud's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/18/CQOI2015-选数/" class="b-link-green">[CQOI2015]选数</a>
+                    <a href="/2019/02/22/poj1286-Necklace-of-Beads/" class="b-link-green">poj1286--Necklace of Beads</a>
                 </p>
             </div>
         </div>
@@ -417,7 +467,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-02-18T00-06-54',
+        id: '2019-02-22T12-57-30',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -436,7 +486,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Mon Feb 18 2019 00:06:54 GMT+0800',
+    id: 'Fri Feb 22 2019 12:57:30 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -464,20 +514,19 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/22/poj1286-Necklace-of-Beads/">
+                <a href="/2019/02/22/HNOI2008-Cards/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="poj1286--Necklace of Beads">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="[HNOI2008]Cards">
                         
-                        <span class="card-title">poj1286--Necklace of Beads</span>
+                        <span class="card-title">[HNOI2008]Cards</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">poj1286–Necklace of Beads标签：数学 置换 polya定理
+                    <div class="summary">HNOI2008 Cards标签：数学 置换
 
-题目描述给出三种颜色红绿蓝，对一串n（n&lt;24）个小球的环染色，环可以旋转和翻转，问最终可能有多少不同的染色方案。
-输入输出格式InputThe i</div>
+题目描述小春现在很清闲,面对书桌上的N张牌,他决定给每张染色,目前小春只有3种颜色:红色,蓝色,绿色.他询问Sun有多少种染色方案,Sun很快就给出了答案.进一步,小春要求染出Sr张红色,Sb</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-22
@@ -505,10 +554,6 @@ gitment.render('gitment-content');
                         <span class="chip bg-color">置换</span>
                     </a>
                     
-                    <a href="/tags/polya定理/" target="_blank">
-                        <span class="chip bg-color">polya定理</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -520,22 +565,23 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/17/SDOI2014-数表/">
+                <a href="/2019/02/18/CQOI2015-选数/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="[SDOI2014]数表">
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="[CQOI2015]选数">
                         
-                        <span class="card-title">[SDOI2014]数表</span>
+                        <span class="card-title">[CQOI2015]选数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">[SDOI2014]数表标签：数学 莫比乌斯反演 树状数组 
+                    <div class="summary">[CQOI2015]选数标签：数学 莫比乌斯反演 快速幂
 
-题目描述有一张N*m的数表，其第i行第j列（1 &lt; =i &lt; =n，1 &lt; =j &lt; =m）的数值为能同时整除i和j的所有自然数之和。给定a，计算数表中</div>
+待更新…
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-18
                             </span>
                         <span class="publish-author">
                             
@@ -560,8 +606,8 @@ gitment.render('gitment-content');
                         <span class="chip bg-color">莫比乌斯反演</span>
                     </a>
                     
-                    <a href="/tags/树状数组/" target="_blank">
-                        <span class="chip bg-color">树状数组</span>
+                    <a href="/tags/快速幂/" target="_blank">
+                        <span class="chip bg-color">快速幂</span>
                     </a>
                     
                 </div>
