@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SDOI2015 约数个数和, iSecloud&#39;s Blog">
-    <meta name="description" content="SDOI2015 约数个数和标签： 数学 莫比乌斯反演
+    <meta name="keywords" content="[SDOI2017]数字表格, iSecloud&#39;s Blog">
+    <meta name="description" content="[SDOI2017]数字表格标签： 数学 莫比乌斯
 
-题目描述设d(x)为x的约数个数，给定N、M，求$$\sum_{i=1}^{N}\sum_{j=1}^{M}d(ij)$$
-输入输出格式输入格式：输入文件包含多组测试数据。第一行，一">
+题目描述Doris刚刚学习了fibonacci数列。用f[i]f[i]f[i]表示数列的第iii项，那么$f[0]=0,f[1]=1,$
+$f[n]=f[n−1]+f[n−2],n≥2$">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SDOI2015 约数个数和 | iSecloud&#39;s Blog</title>
+    <title>[SDOI2017]数字表格 | iSecloud&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +279,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SDOI2015 约数个数和
+                        [SDOI2017]数字表格
                     </div>
                 </div>
             </div>
@@ -335,14 +335,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-12
+                    2019-02-26
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        963
+                        956
                     </div>
                     
 
@@ -365,61 +365,72 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="SDOI2015-约数个数和"><a href="#SDOI2015-约数个数和" class="headerlink" title="SDOI2015 约数个数和"></a>SDOI2015 约数个数和</h1><p>标签： 数学 莫比乌斯反演</p>
+                <h1 id="SDOI2017-数字表格"><a href="#SDOI2017-数字表格" class="headerlink" title="[SDOI2017]数字表格"></a>[SDOI2017]数字表格</h1><p>标签： 数学 莫比乌斯</p>
 <hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>设d(x)为x的约数个数，给定N、M，求$$\sum_{i=1}^{N}\sum_{j=1}^{M}d(ij)$$</p>
-<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><p>输入格式：<br>输入文件包含多组测试数据。第一行，一个整数T，表示测试数据的组数。接下来的T行，每行两个整数N、M。</p>
-<p>输出格式：<br>T行，每行一个整数，表示你所求的答案。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p>输入样例#1：<br>2<br>7 4<br>5 6</p>
-<p>输出样例#1：<br>110<br>121</p>
-<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p>1&lt;=N, M&lt;=50000<br>1&lt;=T&lt;=50000</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>想要做这道题，我们必须对这个约数个数函数有一个了解，存在这么一个公式：<br>$$d(ij)=\sum_{x|i}\sum_{y|j}[gcd(x, y) == 1]$$<br>这里有一个比较好的<a href="https://blog.csdn.net/ab_ever/article/details/76737617" target="_blank" rel="noopener">证明</a><br>然后原式为:<br>$$\sum_{i=1}^{N}\sum_{j=1}^{M}\sum_{x|i}\sum_{y|j}[gcd(x,y)==1]$$<br>考虑更改枚举项，我们直接枚举x, y的倍数:<br>$$ \sum_{x=1}^{N}\sum_{y=1}^{M}\sum_{i=1}^{\frac{N}{x}}\sum_{j=1}^{\frac{M}{y}}[gcd(x,y)==1]$$<br>化简<br>$$ \sum_{x=1}^{N}\sum_{y=1}^{M}\left \lfloor \frac{N}{x} \right \rfloor\left \lfloor \frac{M}{y} \right \rfloor[gcd(x,y)==1]$$<br>看起来似乎跟莫比乌斯有点关系了<br>于是我们不妨直接设<br>$$ f(x)=\sum_{i=1}^{N}\sum_{j=1}^{M}\left \lfloor \frac{N}{i} \right \rfloor\left \lfloor \frac{M}{j} \right \rfloor[gcd(i,j)==x]$$<br>$$F(x)=\sum_{x|d}f(d)$$<br>一般都是从$F(x)$入手<br>$$ F(x)=\sum_{i=1}^{M}\sum_{j=1}^{N}\left \lfloor \frac{N}{i} \right \rfloor\left \lfloor \frac{M}{j} \right \rfloor[x|gcd(i,j)]$$<br>化简到这里，就很容易联想到更改枚举项，我们枚举x的倍数:<br>$$ F(x)=\sum_{i=1}^{\frac{N}{x}}\sum_{j=1}^{\frac{M}{x}}\left \lfloor \frac{N}{i} \right \rfloor\left \lfloor \frac{M}{j} \right \rfloor\frac{1}{x^{2}}$$<br>那么我们预处理一个$g(x)=\sum_{i=1}^{n}\left \lfloor \frac{n}{i} \right \rfloor$<br>那么$F(x)$就可以在O（1）算出来了<br>那么关于$g(x)$如何预处理，它其实就是前n个数的约数个数的前缀和，可以线性筛（具体百度）<br>做了这么多，回到正题:<br>$$Ans=f(1)$$<br>$$Ans =\sum_{d=1}^{min(n,m)}u(d)F(d)$$（莫比乌斯反演）<br>$$Ans =\sum_{x=1}^{min(n,m)}u(x)\sum_{i=1}^{\frac{N}{x}}\sum_{j=1}^{\frac{M}{x}}\left \lfloor \frac{N}{ix} \right \rfloor\left \lfloor \frac{M}{jx} \right \rfloor$$<br>由于前面处理了一个$g(x)$所以：<br>$$Ans=\sum_{i=1}^{min(n,m)}u(x)g(\frac{n}{x})g(\frac{m}{x})$$<br>化简到这里于是就可以完结撒花啦✿✿ヽ(°▽°)ノ✿<br>最后记着用整除分块优化~~</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Doris刚刚学习了fibonacci数列。用f[i]f[i]f[i]表示数列的第iii项，那么<br>$f[0]=0,f[1]=1,$</p>
+<p>$f[n]=f[n−1]+f[n−2],n≥2$<br>Doris用老师的超级计算机生成了一个$n×m$的表格<br>第i行第j列的格子中的数是$f[gcd(i,j)]$其中$gcd(i,j)$表示i,j的最大公约数。<br>Doris的表格中共有$n×m$个数，她想知道这些数的乘积是多少。<br>答案对$10^9+7$取模。</p>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>有多组测试数据。<br>第一个一个数T，表示数据组数。<br>接下来T行，每行两个数n,m</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出T行，第i行的数是第i组数据的结果</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p>输入样例#1：<br>3<br>2 3<br>4 5<br>6 7</p>
+<p>输出样例#1：<br>1<br>6<br>960</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>对10%的数据，$1≤n,m≤100$<br>对30%的数据，$1≤n,m≤1000$<br>另外存在30%的数据，$T≤3$<br>对100%的数据，$T≤1000,1≤n,m≤10^6$<br>时间限制：5s<br>内存限制：128MB</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>做了一些题目后感觉莫比乌斯题目套路都比较明显了~~<br>一般都是关于$gcd$这个神奇的东西<br>一句话描述题目：<br>$$Ans=\prod_{i=1}^{n}\prod_{j=1}^{m}Fi(gcd(i,j))$$<br>其中$Fi$表示斐波那契数列<br>那么按照套路，我们设:<br>$$f(x)=\sum_{i=1}^{n}\sum_{j=1}^{m}[gcd(i,j)==x]$$<br>$$F(x)=\sum_{x|d}f(d)=\left \lfloor \frac{n}{x} \right \rfloor\left \lfloor \frac{m}{x} \right \rfloor$$<br>那么我们枚举$gcd$<br>$$Ans=\prod_{x=1}^{min(n,m)}Fi(x)^{f(x)}$$<br>指数部分很简单，我们直接反演即可<br>$$Ans=\prod_{x=1}^{min(n,m)}Fi(x)^{\sum_{x|d}u(\frac{d}{x})\frac{n}{d}\frac{m}{d}}$$<br>更改枚举项<br>$$Ans=\prod_{x=1}^{min(n,m)}Fi(x)^{\sum_{d=1}^{min(n,m)}u(d)\frac{n}{dx}\frac{m}{dx}}$$<br>化简到这里还是不能直接做，我们知道$Fi$和$u$都可以预处理，因此我们要把这两个”撮合”到一起<br>外部更改枚举项，我们枚举$dx$（即x的倍数）<br>$$Ans=\prod_{T=1}^{min(n,m)}(\prod_{k|T}Fi(k)^{u(\frac{T}{k})})^{\frac{n}{T}\frac{m}{T}}$$<br>我们设$g(T)=\prod_{k|T}Fi(k)^{u(\frac{T}{k})}$<br>这个$g(T)$是可以预处理的<br>那么<br>$$Ans=\prod_{T=1}^{min(n,m)}g(T)^{\frac{n}{T}\frac{m}{T}}$$<br>最后用整除分块即可解决本题了</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdlib></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
-<span class="token macro property">#<span class="token directive keyword">define</span> N 60010</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> N 1000010</span>
 <span class="token macro property">#<span class="token directive keyword">define</span> ll long long</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> debug system("pause")</span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> ll p <span class="token operator">=</span> <span class="token number">1e9</span> <span class="token operator">+</span> <span class="token number">7</span><span class="token punctuation">;</span>
 
 <span class="token keyword">int</span> t<span class="token punctuation">,</span> n<span class="token punctuation">,</span> m<span class="token punctuation">,</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> u<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> pri<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> fac<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> d<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> sum<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
-ll g<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> ans<span class="token punctuation">;</span>
+<span class="token keyword">int</span> pri<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> u<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+ll f<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> g<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span> sum<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">bool</span> vis<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+ll <span class="token function">pow_mul</span><span class="token punctuation">(</span>ll a<span class="token punctuation">,</span> ll b<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ll ans <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>b <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">)</span> ans <span class="token operator">=</span> ans <span class="token operator">*</span> a <span class="token operator">%</span> p<span class="token punctuation">;</span>
+        a <span class="token operator">=</span> a <span class="token operator">*</span> a <span class="token operator">%</span> p<span class="token punctuation">;</span>
+        b <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+ll <span class="token function">calc</span><span class="token punctuation">(</span>ll a<span class="token punctuation">,</span> ll b<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>b <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>b <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>b <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">pow_mul</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> p <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token keyword">void</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> t <span class="token operator">=</span> N <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">;</span>
-    u<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> fac<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    u<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token keyword">int</span> t <span class="token operator">=</span> N <span class="token operator">-</span> <span class="token number">10</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>vis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> 
-        <span class="token punctuation">{</span>
-            pri<span class="token punctuation">[</span><span class="token operator">++</span> cnt<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span> u<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-            fac<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> d<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>vis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> u<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> pri<span class="token punctuation">[</span><span class="token operator">++</span> cnt<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> cnt <span class="token operator">&amp;&amp;</span> i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> j <span class="token operator">++</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
             vis<span class="token punctuation">[</span>i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> 
-            <span class="token punctuation">{</span>
-                u<span class="token punctuation">[</span>i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span>u<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                fac<span class="token punctuation">[</span>i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> fac<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
-                d<span class="token punctuation">[</span>i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">else</span> 
-            <span class="token punctuation">{</span>
-                fac<span class="token punctuation">[</span>i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> fac<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token punctuation">(</span>d<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>d<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                d<span class="token punctuation">[</span>i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> d<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> u<span class="token punctuation">[</span>i <span class="token operator">*</span> pri<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span>u<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span> 
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> 
-    <span class="token punctuation">{</span>
-        g<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> g<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> fac<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        sum<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> u<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
+    g<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> g<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
+        g<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>g<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> g<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> 
+        f<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">*</span> j <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> j <span class="token operator">++</span><span class="token punctuation">)</span>
+            f<span class="token punctuation">[</span>i <span class="token operator">*</span> j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>f<span class="token punctuation">[</span>i <span class="token operator">*</span> j<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token function">calc</span><span class="token punctuation">(</span>g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> u<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> sum<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> f<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">%</span> p<span class="token punctuation">;</span>       
 <span class="token punctuation">}</span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -429,19 +440,20 @@ ll g<span class="token punctuation">[</span>N<span class="token punctuation">]</
     <span class="token keyword">while</span><span class="token punctuation">(</span>t <span class="token operator">--</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
         <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">,</span> <span class="token operator">&amp;</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> d <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">;</span> l <span class="token operator">&lt;=</span> d<span class="token punctuation">;</span> l <span class="token operator">=</span> r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">></span> m<span class="token punctuation">)</span> <span class="token function">swap</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ll ans <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">;</span> l <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> l <span class="token operator">=</span> r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
-            r <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token punctuation">(</span>n <span class="token operator">/</span> l<span class="token punctuation">)</span><span class="token punctuation">,</span> m <span class="token operator">/</span> <span class="token punctuation">(</span>m <span class="token operator">/</span> l<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            ans <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1ll</span> <span class="token operator">*</span> <span class="token punctuation">(</span>sum<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">-</span> sum<span class="token punctuation">[</span>l <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> g<span class="token punctuation">[</span>n <span class="token operator">/</span> l<span class="token punctuation">]</span> <span class="token operator">*</span> g<span class="token punctuation">[</span>m <span class="token operator">/</span> l<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            r <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>m <span class="token operator">/</span> <span class="token punctuation">(</span>m <span class="token operator">/</span> l<span class="token punctuation">)</span><span class="token punctuation">,</span> n <span class="token operator">/</span> <span class="token punctuation">(</span>n <span class="token operator">/</span> l<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ll tmp <span class="token operator">=</span> <span class="token punctuation">(</span>sum<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token function">pow_mul</span><span class="token punctuation">(</span>sum<span class="token punctuation">[</span>l <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> p <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ans <span class="token operator">=</span> ans <span class="token operator">*</span> <span class="token function">pow_mul</span><span class="token punctuation">(</span>tmp<span class="token punctuation">,</span> <span class="token number">1ll</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">/</span> l<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>m <span class="token operator">/</span> l<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token punctuation">(</span>p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld\n"</span><span class="token punctuation">,</span> ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld\n"</span><span class="token punctuation">,</span> ans <span class="token operator">%</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> 
 </code></pre>
-<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>感觉逐渐摸索出了一些更改枚举项的技巧，不过设$f(x)$函数思维还是比较僵化，没有想到直接把那么一大坨式子直接设为$f(x)$。看来以后化简不下去了就直接设函数也是一种方法（然后发现是不会化简…）</p>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>巧妙的更改枚举项，把能预处理的合并在一起即可优化时间复杂度</p>
 
             </div>
             <hr>
@@ -465,7 +477,7 @@ ll g<span class="token punctuation">[</span>N<span class="token punctuation">]</
                     </span>
                     <a href="https://isecloud.github.io" class="b-link-green">iSecloud's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/12/SDOI2015-约数个数和/" class="b-link-green">SDOI2015 约数个数和</a>
+                    <a href="/2019/02/26/SDOI2017-数字表格/" class="b-link-green">[SDOI2017]数字表格</a>
                 </p>
             </div>
         </div>
@@ -487,7 +499,7 @@ ll g<span class="token punctuation">[</span>N<span class="token punctuation">]</
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-02-12T22-36-45',
+        id: '2019-02-26T17-16-33',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -506,7 +518,7 @@ ll g<span class="token punctuation">[</span>N<span class="token punctuation">]</
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Tue Feb 12 2019 22:36:45 GMT+0800',
+    id: 'Tue Feb 26 2019 17:16:33 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -532,25 +544,27 @@ gitment.render('gitment-content');
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/13/bzoj2154-Crash的数字表格/">
+                <a href="/2019/02/26/SDOI2017-数字表格/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="bzoj2154 Crash的数字表格">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="[SDOI2017]数字表格">
                         
-                        <span class="card-title">bzoj2154 Crash的数字表格</span>
+                        <span class="card-title">[SDOI2017]数字表格</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">bzoj2154 Crash的数字表格标签： 数学 莫比乌斯反演
+                    <div class="summary">[SDOI2017]数字表格标签： 数学 莫比乌斯
 
-题目描述今天的数学课上，Crash小朋友学习了最小公倍数(Least Common Multiple)。对于两个正整数a和b，LCM(a, b)表示能同时被a和b整除的最小</div>
+题目描述Doris刚刚学习了fibonacci数列。用f[i]f[i]f[i]表示数列的第iii项，那么$f[0]=0,f[1]=1,$
+$f[n]=f[n−1]+f[n−2],n≥2$</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -563,6 +577,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -585,22 +600,22 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/10/POI2007-ZAP-Queries/">
+                <a href="/2019/02/23/HNOI2009-图的同构记数/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="POI200 7ZAP-Queries">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="HNOI2009 图的同构记数">
                         
-                        <span class="card-title">POI200 7ZAP-Queries</span>
+                        <span class="card-title">HNOI2009 图的同构记数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">[POI2007]ZAP-Queries标签： 数学 莫比乌斯反演
+                    <div class="summary">HNOI2009 图的同构记数标签： 数学 置换 polya定理
 
-题目描述FGD正在破解一段密码，他需要回答很多类似的问题：对于给定的整数a,b和d，有多少正整数对x,y，满足1&lt;=x&lt;=a，1&lt;=y&lt;=b，并且</div>
+题目描述小雪在了解到以上情况后，自认为直接挑战终极难题还有不少困难，于是决定先从简单的问题做起，具体来说，他对图同构问题产生了浓厚的兴趣。A图与B图被认为是同构的是指：A图</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-23
                             </span>
                         <span class="publish-author">
                             
@@ -621,8 +636,12 @@ gitment.render('gitment-content');
                         <span class="chip bg-color">数学</span>
                     </a>
                     
-                    <a href="/tags/莫比乌斯反演/" target="_blank">
-                        <span class="chip bg-color">莫比乌斯反演</span>
+                    <a href="/tags/置换/" target="_blank">
+                        <span class="chip bg-color">置换</span>
+                    </a>
+                    
+                    <a href="/tags/polya定理/" target="_blank">
+                        <span class="chip bg-color">polya定理</span>
                     </a>
                     
                 </div>
