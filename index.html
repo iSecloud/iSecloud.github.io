@@ -346,6 +346,35 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="card">
                 <div class="card-content">
                     
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+
+    <div class="title center-align">
+        <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
+    </div>
+
+<div id="aplayer" class="music"></div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"フローイング","artist":"mol-74","url":"/medias/music/mol-74 - フローイング.mp3","cover":"/medias/music/mol-74 - フローイング.png"}]')
+    });
+});
+</script>
+                    
 
                     <div id="recommend-sections" class="recommend">
                         
