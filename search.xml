@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>关于一类LIS转LCS的问题</title>
+      <link href="/2019/03/25/%E5%85%B3%E4%BA%8E%E4%B8%80%E7%B1%BBLIS%E8%BD%ACLCS%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+      <url>/2019/03/25/%E5%85%B3%E4%BA%8E%E4%B8%80%E7%B1%BBLIS%E8%BD%ACLCS%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="关于一类LIS转LCS的问题"><a href="#关于一类LIS转LCS的问题" class="headerlink" title="关于一类LIS转LCS的问题"></a>关于一类LIS转LCS的问题</h1><p>标签： 总结 动态规划 序列DP</p><hr><h2 id="1-序"><a href="#1-序" class="headerlink" title="1.序"></a>1.序</h2><p>LIS：最长上升子序列，众所周知有n^2的算法，不过由于效率较低所以现在一般都是nlogn的算法（单调栈，树状数组解决），具体方法在此就不过多叙述。<br>LCS：最长公共子序列，即求两个序列的最长的相同子序列。现在所知解决这一类问题的方法只有n^2的动态规划。<br>而今天在这里讨论的便是一类特殊的LCS问题，通过一些转换可变成nlogn的LIS问题。</p><h2 id="2-引入"><a href="#2-引入" class="headerlink" title="2.引入"></a>2.引入</h2><p>我们可以先想一想LIS与LCS如何联系起来。LIS一般就是单个元素的问题，而LCS是涉及二元组（两个元素相同嘛）的问题。<br>先来思考这样一个问题，给你一串二元组（x,y），要你选取二元组序列使得x,y分别递增，问长度最大。<br>eg:（1,2）,（3,4）,（5,6）便是一个合法的递增二元组<br>如何解决呢？<br>其实我们只需要对x排序以后，对y按照LIS的方法解决就可以了对吧。因为对x排序以后我们就保证x是递增的了，于是接下来只需满足y递增就行了。</p><h2 id="3-转换"><a href="#3-转换" class="headerlink" title="3.转换"></a>3.转换</h2><p>现在思考LCS，我们最长公共子序列子序列也可以看成一些二元组（i1,j1）,（i2,j2）…..（in,jn）<br>满足a[i1]=b[j1], a[i2]=b[j2],….,a[in]=b[jn]<br>并且i1 &lt; i2 &lt;….&lt; in； j1 &lt; j2 &lt;…&lt; jn；<br>诶似乎到这里问题就变得明朗起来了，我们只需要对A序列的每个字符c，得到在B序列出现的位置，然后组成二元组用上述方法便可以解决了。<br>不过怎么统计在B中出现的位置呢，每个每个统计又变成n^2的复杂度了。<br>所以我们才说这个方法是处理一类“特殊”LCS问题嘛。<br>一般这类问题每个字符出现的范围很少（比如只有小写字母）,或者每个字符出现次数有限（比如A,B序列都是一个N的全排列的一种），于是我们就可以开一个数组映射就好了。<br>还有一个问题，如果A序列的一个字符在B中出现多次怎么办，比如 A：abbbccc   B: bbccaaa<br>这里a在B中5 6 7位置均出现过。即（1,5）,（1,6）,（1,7）<br>但这三个只能选一个咋整<img src="http://dingyue.nosdn.127.net/nnGLVe2NHLhtI2q0s3czM87wsNqPRRSTXmrSEFjck9ZPn1534322907172.jpeg" alt=""><br>全选肯定是不行的，所以排序的时候若x相同则要按照y从大到小排序，那么这样就保证只会选到一个了</p><h2 id="4-相关题目"><a href="#4-相关题目" class="headerlink" title="4.相关题目"></a>4.相关题目</h2><p><a href="https://www.luogu.org/problemnew/show/P1439" target="_blank" rel="noopener">洛谷P1439</a><br><a href="https://www.luogu.org/problemnew/show/P4303" target="_blank" rel="noopener">AHOI2006基因匹配</a></p><h2 id="5-最后的话"><a href="#5-最后的话" class="headerlink" title="5.最后的话"></a>5.最后的话</h2><p>get到一个新技巧辣~~~以后有新题目或者思想也会及时更新的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 动态规划 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 动态规划 </tag>
+            
+            <tag> 序列DP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Polya总结</title>
       <link href="/2019/03/18/Polya%E6%80%BB%E7%BB%93/"/>
       <url>/2019/03/18/Polya%E6%80%BB%E7%BB%93/</url>

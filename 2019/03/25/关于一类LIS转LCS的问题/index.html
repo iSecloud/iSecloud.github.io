@@ -4,11 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Polya总结, iSecloud&#39;s Blog">
-    <meta name="description" content="Polya总结标签： 总结
+    <meta name="keywords" content="关于一类LIS转LCS的问题, iSecloud&#39;s Blog">
+    <meta name="description" content="关于一类LIS转LCS的问题标签： 总结 动态规划 序列DP
 
-1.序Polya定理主要是解决一类翻转染色问题，即本质不同的种类数。（看到题目问题问本质不同的什么什么…就可以联想到Polya定理了）
-2.重要定理这个算法有两个最重要的定理，只要知道这个定理就可以直接套公式辣">
+1.序LIS：最长上升子序列，众所周知有n^2的算法，不过由于效率较低所以现在一般都是nlogn的算法（单调栈，树状数组解决），具体方法在此就不过多叙述。LCS：最长公共子序列">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Polya总结 | iSecloud&#39;s Blog</title>
+    <title>关于一类LIS转LCS的问题 | iSecloud&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +278,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/30.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Polya总结
+                        关于一类LIS转LCS的问题
                     </div>
                 </div>
             </div>
@@ -307,8 +306,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/总结/" target="_blank">
-                                <span class="chip bg-color">总结</span>
+                            <a href="/tags/数学/" target="_blank">
+                                <span class="chip bg-color">数学</span>
+                            </a>
+                        
+                            <a href="/tags/动态规划/" target="_blank">
+                                <span class="chip bg-color">动态规划</span>
+                            </a>
+                        
+                            <a href="/tags/序列DP/" target="_blank">
+                                <span class="chip bg-color">序列DP</span>
                             </a>
                         
                     </div>
@@ -319,8 +326,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/总结/" class="post-category" target="_blank">
-                                总结
+                            <a href="/categories/动态规划/" class="post-category" target="_blank">
+                                动态规划
                             </a>
                         
                     </div>
@@ -331,21 +338,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-18
+                    2019-03-25
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        456
+                        726
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -361,14 +368,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Polya总结"><a href="#Polya总结" class="headerlink" title="Polya总结"></a>Polya总结</h1><p>标签： 总结</p>
+                <h1 id="关于一类LIS转LCS的问题"><a href="#关于一类LIS转LCS的问题" class="headerlink" title="关于一类LIS转LCS的问题"></a>关于一类LIS转LCS的问题</h1><p>标签： 总结 动态规划 序列DP</p>
 <hr>
-<h2 id="1-序"><a href="#1-序" class="headerlink" title="1.序"></a>1.序</h2><p>Polya定理主要是解决一类翻转染色问题，即本质不同的种类数。（看到题目问题问本质不同的什么什么…就可以联想到Polya定理了）</p>
-<h2 id="2-重要定理"><a href="#2-重要定理" class="headerlink" title="2.重要定理"></a>2.重要定理</h2><p>这个算法有两个最重要的定理，只要知道这个定理就可以直接套公式辣~~</p>
-<h3 id="（1）Burnside-引理"><a href="#（1）Burnside-引理" class="headerlink" title="（1）Burnside 引理"></a>（1）Burnside 引理</h3><p>$$\frac{1}{\left | G \right |}\sum_{i=1}^{n}D(a_{i})$$<br>其中G表示置换种类（需要记住的是不变置换也算一种置换）<br>$D(a_{i})$表示在i置换下不动点的个数（这里的“点”可以理解一种方案，比如涂色方案）</p>
-<h3 id="（2）Polya-定理"><a href="#（2）Polya-定理" class="headerlink" title="（2）Polya 定理"></a>（2）Polya 定理</h3><p>$$\frac{1}{\left | G \right |}\sum_{i=1}^{n}m^{c(g_{i})}$$<br>其中m表示染色种类，$c(g_{i})$表示在第i种置换下的循环节个数<br>我们可以从Burnside引理来理解，Burnside引理是求每个置换下的不动点，而每种置换可以当前目标分割成一个一个的循环节，那么只要对每个循环节内部染上相同颜色，则就相当于构造出不动点了撒</p>
-<h2 id="3-方法总结"><a href="#3-方法总结" class="headerlink" title="3.方法总结"></a>3.方法总结</h2><p>几乎可以一句话总结:找循环节！只要找到就可以套公式辣。当然这里是对于颜色无限使用的情况下，如果颜色数量有限制的话我们就只能用Burnside引理了（比如找出循环节然后对每个循环节分配颜色，就相当于背包DP之类的）<br>当然还有一类题是就同构图，即二元组的polya定理（这个是我自己口胡的，感觉很形象~~）详见<a href="https://isecloud.github.io/2019/02/22/SHOI2006-%E6%9C%89%E8%89%B2%E5%9B%BE/">这里</a></p>
-<h2 id="4-最后的话"><a href="#4-最后的话" class="headerlink" title="4.最后的话"></a>4.最后的话</h2><p>对Polya定理总结大概就这样吧，以后遇到新题型也会及时更新的~~</p>
+<h2 id="1-序"><a href="#1-序" class="headerlink" title="1.序"></a>1.序</h2><p>LIS：最长上升子序列，众所周知有n^2的算法，不过由于效率较低所以现在一般都是nlogn的算法（单调栈，树状数组解决），具体方法在此就不过多叙述。<br>LCS：最长公共子序列，即求两个序列的最长的相同子序列。现在所知解决这一类问题的方法只有n^2的动态规划。<br>而今天在这里讨论的便是一类特殊的LCS问题，通过一些转换可变成nlogn的LIS问题。</p>
+<h2 id="2-引入"><a href="#2-引入" class="headerlink" title="2.引入"></a>2.引入</h2><p>我们可以先想一想LIS与LCS如何联系起来。LIS一般就是单个元素的问题，而LCS是涉及二元组（两个元素相同嘛）的问题。<br>先来思考这样一个问题，给你一串二元组（x,y），要你选取二元组序列使得x,y分别递增，问长度最大。<br>eg:（1,2）,（3,4）,（5,6）便是一个合法的递增二元组<br>如何解决呢？<br>其实我们只需要对x排序以后，对y按照LIS的方法解决就可以了对吧。因为对x排序以后我们就保证x是递增的了，于是接下来只需满足y递增就行了。</p>
+<h2 id="3-转换"><a href="#3-转换" class="headerlink" title="3.转换"></a>3.转换</h2><p>现在思考LCS，我们最长公共子序列子序列也可以看成一些二元组（i1,j1）,（i2,j2）…..（in,jn）<br>满足a[i1]=b[j1], a[i2]=b[j2],….,a[in]=b[jn]<br>并且i1 &lt; i2 &lt;….&lt; in； j1 &lt; j2 &lt;…&lt; jn；<br>诶似乎到这里问题就变得明朗起来了，我们只需要对A序列的每个字符c，得到在B序列出现的位置，然后组成二元组用上述方法便可以解决了。<br>不过怎么统计在B中出现的位置呢，每个每个统计又变成n^2的复杂度了。<br>所以我们才说这个方法是处理一类“特殊”LCS问题嘛。<br>一般这类问题每个字符出现的范围很少（比如只有小写字母）,或者每个字符出现次数有限（比如A,B序列都是一个N的全排列的一种），于是我们就可以开一个数组映射就好了。<br>还有一个问题，如果A序列的一个字符在B中出现多次怎么办，比如 A：abbbccc   B: bbccaaa<br>这里a在B中5 6 7位置均出现过。即（1,5）,（1,6）,（1,7）<br>但这三个只能选一个咋整<img src="http://dingyue.nosdn.127.net/nnGLVe2NHLhtI2q0s3czM87wsNqPRRSTXmrSEFjck9ZPn1534322907172.jpeg" alt=""><br>全选肯定是不行的，所以排序的时候若x相同则要按照y从大到小排序，那么这样就保证只会选到一个了</p>
+<h2 id="4-相关题目"><a href="#4-相关题目" class="headerlink" title="4.相关题目"></a>4.相关题目</h2><p><a href="https://www.luogu.org/problemnew/show/P1439" target="_blank" rel="noopener">洛谷P1439</a><br><a href="https://www.luogu.org/problemnew/show/P4303" target="_blank" rel="noopener">AHOI2006基因匹配</a></p>
+<h2 id="5-最后的话"><a href="#5-最后的话" class="headerlink" title="5.最后的话"></a>5.最后的话</h2><p>get到一个新技巧辣~~~以后有新题目或者思想也会及时更新的。</p>
 
             </div>
             <hr>
@@ -392,7 +398,7 @@
                     </span>
                     <a href="https://isecloud.github.io" class="b-link-green">iSecloud's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/18/Polya总结/" class="b-link-green">Polya总结</a>
+                    <a href="/2019/03/25/关于一类LIS转LCS的问题/" class="b-link-green">关于一类LIS转LCS的问题</a>
                 </p>
             </div>
         </div>
@@ -415,7 +421,8 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/03/25/关于一类LIS转LCS的问题/">
                     <div class="card-image">
@@ -431,9 +438,9 @@
 
 1.序LIS：最长上升子序列，众所周知有n^2的算法，不过由于效率较低所以现在一般都是nlogn的算法（单调栈，树状数组解决），具体方法在此就不过多叙述。LCS：最长公共子序列</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -446,6 +453,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -472,23 +480,23 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/02/莫比乌斯反演总结/">
+                <a href="/2019/03/18/Polya总结/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="莫比乌斯反演总结">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Polya总结">
                         
-                        <span class="card-title">莫比乌斯反演总结</span>
+                        <span class="card-title">Polya总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">莫比乌斯反演总结标签： 总结
+                    <div class="summary">Polya总结标签： 总结
 
-1.序做了一段时间的莫比乌斯反演题目，决定还是总结一下莫比乌斯反演做题方法（套路）吧。便于以后的复习与理解
-2.莫比乌斯函数莫比乌斯函数本质是一个容斥函数，它的定义如下:当$d=1$时$u(d)=1$当$d=</div>
+1.序Polya定理主要是解决一类翻转染色问题，即本质不同的种类数。（看到题目问题问本质不同的什么什么…就可以联想到Polya定理了）
+2.重要定理这个算法有两个最重要的定理，只要知道这个定理就可以直接套公式辣</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-18
                             </span>
                         <span class="publish-author">
                             
