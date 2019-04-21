@@ -4,11 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Polya总结, iSecloud&#39;s Blog">
-    <meta name="description" content="Polya总结标签： 总结
-
-1.序Polya定理主要是解决一类翻转染色问题，即本质不同的种类数。（看到题目问题问本质不同的什么什么…就可以联想到Polya定理了）
-2.重要定理这个算法有两个最重要的定理，只要知道这个定理就可以直接套公式辣">
+    <meta name="keywords" content="标签: 树形DP, iSecloud&#39;s Blog">
+    <meta name="description" content="标签: 树形DP | iSecloud&#39;s Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Polya总结 | iSecloud&#39;s Blog</title>
+    <title>标签: 树形DP | iSecloud&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,257 +272,260 @@
     </nav>
 </header>
 
-
-
-
-
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col s12 m12 l12">
+            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        Polya总结
+                    <div class="title center-align">
+                    
+                        记忆里，曾经有那么一个人，会发光的那个人
+                    
+                    </div>
+
+                    <div class="description center-align">
+                    
+                        一个ACMer，永远年轻，永远热爱算法
+                    
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
 
+<script>
+// Dynamically switch banner pictures every day.
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
 
-
-<main class="container content">
+<main class="content">
 
     
-    <!-- 文章内容详情 -->
-<div id="artDetail">
+
+<div id="tags" class="container chip-container">
     <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/总结/" target="_blank">
-                                <span class="chip bg-color">总结</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/总结/" class="post-category" target="_blank">
-                                总结
-                            </a>
-                        
-                    </div>
-                    
-                </div>
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
             </div>
-
-            <div class="post-info">
-                <div class="post-date info-break-policy">
-                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-18
-                </div>
-
+            <div class="tag-chips">
                 
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        456
-                    </div>
-                    
-
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
-                    </div>
-                    
                 
-				
-				
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <h1 id="Polya总结"><a href="#Polya总结" class="headerlink" title="Polya总结"></a>Polya总结</h1><p>标签： 总结</p>
-<hr>
-<h2 id="1-序"><a href="#1-序" class="headerlink" title="1.序"></a>1.序</h2><p>Polya定理主要是解决一类翻转染色问题，即本质不同的种类数。（看到题目问题问本质不同的什么什么…就可以联想到Polya定理了）</p>
-<h2 id="2-重要定理"><a href="#2-重要定理" class="headerlink" title="2.重要定理"></a>2.重要定理</h2><p>这个算法有两个最重要的定理，只要知道这个定理就可以直接套公式辣~~</p>
-<h3 id="（1）Burnside-引理"><a href="#（1）Burnside-引理" class="headerlink" title="（1）Burnside 引理"></a>（1）Burnside 引理</h3><p>$$\frac{1}{\left | G \right |}\sum_{i=1}^{n}D(a_{i})$$<br>其中G表示置换种类（需要记住的是不变置换也算一种置换）<br>$D(a_{i})$表示在i置换下不动点的个数（这里的“点”可以理解一种方案，比如涂色方案）</p>
-<h3 id="（2）Polya-定理"><a href="#（2）Polya-定理" class="headerlink" title="（2）Polya 定理"></a>（2）Polya 定理</h3><p>$$\frac{1}{\left | G \right |}\sum_{i=1}^{n}m^{c(g_{i})}$$<br>其中m表示染色种类，$c(g_{i})$表示在第i种置换下的循环节个数<br>我们可以从Burnside引理来理解，Burnside引理是求每个置换下的不动点，而每种置换可以当前目标分割成一个一个的循环节，那么只要对每个循环节内部染上相同颜色，则就相当于构造出不动点了撒</p>
-<h2 id="3-方法总结"><a href="#3-方法总结" class="headerlink" title="3.方法总结"></a>3.方法总结</h2><p>几乎可以一句话总结:找循环节！只要找到就可以套公式辣。当然这里是对于颜色无限使用的情况下，如果颜色数量有限制的话我们就只能用Burnside引理了（比如找出循环节然后对每个循环节分配颜色，就相当于背包DP之类的）<br>当然还有一类题是就同构图，即二元组的polya定理（这个是我自己口胡的，感觉很形象~~）详见<a href="https://isecloud.github.io/2019/02/22/SHOI2006-%E6%9C%89%E8%89%B2%E5%9B%BE/">这里</a></p>
-<h2 id="4-最后的话"><a href="#4-最后的话" class="headerlink" title="4.最后的话"></a>4.最后的话</h2><p>对Polya定理总结大概就这样吧，以后遇到新题型也会及时更新的~~</p>
-
-            </div>
-            <hr>
-
-            
-
-            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
-<div id="article-share">
-    
-    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
-    
-</div>
-
-<script src="/libs/share/js/social-share.min.js"></script>
-
-            <div class="reprint">
-                <p>
-                    <span class="reprint-tip">
-                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                <a href="/tags/动态规划/" title="动态规划: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="动态规划" style="background-color: #F9EBEA;">动态规划
+                        <span class="tag-length">6</span>
                     </span>
-                    <a href="https://isecloud.github.io" class="b-link-green">iSecloud's Blog</a>
-                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/18/Polya总结/" class="b-link-green">Polya总结</a>
-                </p>
+                </a>
+                
+                
+                <a href="/tags/树形结构/" title="树形结构: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="树形结构" style="background-color: #F5EEF8;">树形结构
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/树形DP/" title="树形DP: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active " data-tagname="树形DP" style="background-color: #D5F5E3;">树形DP
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/数学/" title="数学: 10">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="数学" style="background-color: #E8F8F5;">数学
+                        <span class="tag-length">10</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/莫比乌斯反演/" title="莫比乌斯反演: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="莫比乌斯反演" style="background-color: #FEF9E7;">莫比乌斯反演
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/容斥原理/" title="容斥原理: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="容斥原理" style="background-color: #F8F9F9;">容斥原理
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/递推/" title="递推: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="递推" style="background-color: #82E0AA;">递推
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/置换/" title="置换: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="置换" style="background-color: #D7BDE2;">置换
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/polya定理/" title="polya定理: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="polya定理" style="background-color: #A3E4D7;">polya定理
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/test/" title="test: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="test" style="background-color: #85C1E9;">test
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/codeforces/" title="codeforces: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="codeforces" style="background-color: #F8C471;">codeforces
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/思维/" title="思维: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="思维" style="background-color: #F9E79F;">思维
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/差分/" title="差分: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="差分" style="background-color: #85C1E9;">差分
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/总结/" title="总结: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="总结" style="background-color: #82E0AA;">总结
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/树状数组/" title="树状数组: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="树状数组" style="background-color: #D7BDE2;">树状数组
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/背包DP/" title="背包DP: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="背包DP" style="background-color: #FFF;">背包DP
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/序列DP/" title="序列DP: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="序列DP" style="background-color: #F8F9F9;">序列DP
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2019/03/25/关于一类LIS转LCS的问题/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="关于一类LIS转LCS的问题">
-                        
-                        <span class="card-title">关于一类LIS转LCS的问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">关于一类LIS转LCS的问题标签： 总结 动态规划 序列DP
-
-1.序LIS：最长上升子序列，众所周知有n^2的算法，不过由于效率较低所以现在一般都是nlogn的算法（单调栈，树状数组解决），具体方法在此就不过多叙述。LCS：最长公共子序列</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-25
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/动态规划/" class="post-category" target="_blank">
-                                    动态规划
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/动态规划/" target="_blank">
-                        <span class="chip bg-color">动态规划</span>
-                    </a>
-                    
-                    <a href="/tags/序列DP/" target="_blank">
-                        <span class="chip bg-color">序列DP</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/03/02/莫比乌斯反演总结/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="莫比乌斯反演总结">
-                        
-                        <span class="card-title">莫比乌斯反演总结</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">莫比乌斯反演总结标签： 总结
-
-1.序做了一段时间的莫比乌斯反演题目，决定还是总结一下莫比乌斯反演做题方法（套路）吧。便于以后的复习与理解
-2.莫比乌斯函数莫比乌斯函数本质是一个容斥函数，它的定义如下:当$d=1$时$u(d)=1$当$d=</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/总结/" class="post-category" target="_blank">
-                                    总结
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/总结/" target="_blank">
-                        <span class="chip bg-color">总结</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-</article>
 </div>
 
+    <div class="container">
+        
 
-    
-
+        <article>
+            <div class="row tags-posts">
+                
+                
+                <div class="article tag-post col s12 m6 l4" data-tags="动态规划, 树形结构, 树形DP" data-aos="fade-up">
+                    <div class="card">
+                        <a href="/2019/04/21/JSOI2008-魔兽地图/">
+                            <div class="card-image tag-image">
+                                
+                                <img src="https://s2.ax1x.com/2019/03/26/AUP5ut.png" class="responsive-img" alt="[JSOI2008]魔兽地图">
+                                
+                                <span class="card-title">[JSOI2008]魔兽地图</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-21
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/动态规划/" class="post-category" target="_blank">
+                                    动态规划
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="article tag-post col s12 m6 l4" data-tags="动态规划, 树形结构, 树形DP" data-aos="fade-up">
+                    <div class="card">
+                        <a href="/2019/04/21/HAOI2015-树上染色/">
+                            <div class="card-image tag-image">
+                                
+                                <img src="https://s2.ax1x.com/2019/03/26/AUP7E8.png" class="responsive-img" alt="[HAOI2015]树上染色">
+                                
+                                <span class="card-title">[HAOI2015]树上染色</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-21
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/动态规划/" class="post-category" target="_blank">
+                                    动态规划
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </article>
+    </div>
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
