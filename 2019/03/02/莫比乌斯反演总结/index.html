@@ -366,7 +366,7 @@
 <h2 id="1-序"><a href="#1-序" class="headerlink" title="1.序"></a>1.序</h2><p>做了一段时间的莫比乌斯反演题目，决定还是总结一下莫比乌斯反演做题方法（套路）吧。便于以后的复习与理解</p>
 <h2 id="2-莫比乌斯函数"><a href="#2-莫比乌斯函数" class="headerlink" title="2.莫比乌斯函数"></a>2.莫比乌斯函数</h2><p>莫比乌斯函数本质是一个容斥函数，它的定义如下:<br>当$d=1$时$u(d)=1$<br>当$d=\prod_{i=1}^{n}pi$时$u(d)=(-1)^n$（pi为质数）<br>当d的任何一个质因子次数&gt;1,$u(d)=0$<br>通俗意思就是当d质因数分解以后，所有的质因子次数都为1的话，那么$u(d)=(-1)^{n}$（n为质因数个数，d=1可以理解为质因数为0）</p>
 <h3 id="相关性质"><a href="#相关性质" class="headerlink" title="相关性质"></a>相关性质</h3><p>$$1.\sum_{d|n}u(d)=[n==1]$$<br>$$2.\sum_{d|n}\frac{u(d)}{d}=\frac{\varphi (n)}{n}$$<br>1公式表示的意思就是只有当n=1的时候左边式子才会为1，否则为0，可以用二项式定理和莫比乌斯函数定义证明<br>2公式需要用狄利克雷函数证明</p>
-<h2 id="3-莫比乌斯反演"><a href="#3-莫比乌斯反演" class="headerlink" title="3.莫比乌斯反演"></a>3.莫比乌斯反演</h2><p>定理：在非负整数域上存在两个函数$F(n)$和$f(n)$，并且满足以下条件：<br>$$F(n)=\sum_{d|n}f(d)$$<br>则<br>$$f(n)=\sum_{d|n}u(d)F(\frac{n}{d})$$<br>以下给出一个简单的证明:<br>$$\sum_{d|n}u(d)F(\frac{n}{d})=\sum_{d|n}u(d)\sum_{i|\frac{n}{d}}f(i)=\sum_{i|n}f(i)\sum_{d|\frac{n}{i}}u(d)=f(n)$$<br>第一个等式利用第一直接变换<br>第二个等式是枚举项的转换，因为两个等式其实就等价于这个：<br>$$\sum_{(i*d)|n}f(i)u(d)$$<br>可以自己举一个栗子更好理解，比如n=12的时候<br>第三个等式就是利用莫比乌斯函数的第一条性质<br>当然，在做题的时候我们更倾向于用下列式子：<br>$$F(n)=\sum_{n|d}f(d)$$<br>$$f(n)=\sum_{n|d}u(\frac{d}{n})f(d)$$<br>这个证明的话需要用狄利克雷卷积，直观理解就是一个为枚举约数，一个枚举倍数</p>
+<h2 id="3-莫比乌斯反演"><a href="#3-莫比乌斯反演" class="headerlink" title="3.莫比乌斯反演"></a>3.莫比乌斯反演</h2><p>定理：在非负整数域上存在两个函数$F(n)$和$f(n)$，并且满足以下条件：<br>$$F(n)=\sum_{d|n}f(d)$$<br>则<br>$$f(n)=\sum_{d|n}u(d)F(\frac{n}{d})$$<br>以下给出一个简单的证明:<br>$$\sum_{d|n}u(d)F(\frac{n}{d})=\sum_{d|n}u(d)\sum_{i|\frac{n}{d}}f(i)=\sum_{i|n}f(i)\sum_{d|\frac{n}{i}}u(d)=f(n)$$<br>第一个等式利用第一直接变换<br>第二个等式是枚举项的转换，因为两个等式其实就等价于这个：<br>$$\sum_{(i*d)|n}f(i)u(d)$$<br>可以自己举一个栗子更好理解，比如n=12的时候<br>第三个等式就是利用莫比乌斯函数的第一条性质<br>当然，在做题的时候我们更倾向于用下列式子：<br>$$F(n)=\sum_{n|d}f(d)$$<br>$$f(n)=\sum_{n|d}u(\frac{d}{n})F(d)$$<br>这个证明的话需要用狄利克雷卷积，直观理解就是一个为枚举约数，一个枚举倍数</p>
 <h2 id="4-等式变换技巧"><a href="#4-等式变换技巧" class="headerlink" title="4.等式变换技巧"></a>4.等式变换技巧</h2><p>想要做莫比乌斯反演的题目，一般都是需要对原式子进行和式的变换，然后再开始反演；或者是先设$f(x)$和$F(x)$函数对原式反演后在进行和式的变换</p>
 <h3 id="1-求和式子中的位置变换"><a href="#1-求和式子中的位置变换" class="headerlink" title="1.求和式子中的位置变换"></a>1.求和式子中的位置变换</h3><p>对于求和式多项式中一些与枚举无关的变量可以提前：<br>$$\sum_{i=1}^{n}\sum_{j=1}^{m}f(i)g(j)=\sum_{i=1}^{n}f(i)\sum_{j=1}^{m}g(j)$$</p>
 <h3 id="2-更改枚举项"><a href="#2-更改枚举项" class="headerlink" title="2.更改枚举项"></a>2.更改枚举项</h3><p>有时候在化简的时更改枚举项会使得和式变得更简单：<br>比如我们求以下式子:<br>$$\sum_{i=1}^{n}\sum_{j=1}^{m}\sum_{d|gcd(i,j)}d$$<br>我们可以更改枚举项在外层枚举$gcd(i,j)$<br>$$Ans=\sum_{d=1}^{min(n,m)}d\sum_{i=1}^{n}\sum_{j=1}^{m}[d|gcd(i,j)]$$<br>对于后面那一坨式子，我们又可以考虑枚举d的倍数：<br>$$\sum_{i=1}^{n}\sum_{j=1}^{m}[d|gcd(i,j)]=\sum_{i=1}^{\frac{n}{d}}\sum_{j=1}^{\frac{m}{d}}[1|gcd(i,j)]$$<br>对于$1|gcd(i,j)$对于每个gcd肯定都能满足，所以最终我们化简为：<br>$$\sum_{i=1}^{min(n,m)}d\left \lfloor \frac{n}{d} \right \rfloor\left \lfloor \frac{m}{d} \right \rfloor$$<br>对于枚举项的更改，我们一般是考虑<strong>枚举gcd</strong>，<strong>枚举一个数的倍数</strong>，或者<strong>替换一些繁琐的未知数</strong>，例如：</p>
@@ -544,7 +544,7 @@ $f[n]=f[n−1]+f[n−2],n≥2$</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">20.3k</span>
+                <span class="white-color">24.6k</span>
             
 
             
