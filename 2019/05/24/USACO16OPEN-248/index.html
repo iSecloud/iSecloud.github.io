@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, iSecloud&#39;s Blog">
-    <meta name="description" content="Hello World！
-这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。
-    #include&amp;lt;cstdio&gt;
-    #include&amp;">
+    <meta name="keywords" content="[USACO16OPEN]248, iSecloud&#39;s Blog">
+    <meta name="description" content="[USACO16OPEN]248标签：动态规划 区间DP
+
+题目描述给定一个1*n的地图，在里面玩2048，每次可以合并相邻两个（数值范围1-40），问最大能合出多少。注意合并后的数值并非加倍而是+1，例如2与2合并后的数值为3。
+输入输出">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | iSecloud&#39;s Blog</title>
+    <title>[USACO16OPEN]248 | iSecloud&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +279,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('https://s2.ax1x.com/2019/03/26/AUkzDI.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        [USACO16OPEN]248
                     </div>
                 </div>
             </div>
@@ -307,8 +307,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/test/" target="_blank">
-                                <span class="chip bg-color">test</span>
+                            <a href="/tags/动态规划/" target="_blank">
+                                <span class="chip bg-color">动态规划</span>
+                            </a>
+                        
+                            <a href="/tags/区间DP/" target="_blank">
+                                <span class="chip bg-color">区间DP</span>
                             </a>
                         
                     </div>
@@ -319,8 +323,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                随笔
+                            <a href="/categories/动态规划/" class="post-category" target="_blank">
+                                动态规划
                             </a>
                         
                     </div>
@@ -331,21 +335,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-04
+                    2019-05-24
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        71
+                        484
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -361,19 +365,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hello-World！"><a href="#Hello-World！" class="headerlink" title="Hello World！"></a>Hello World！</h1><hr>
-<p>这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。</p>
-<pre class=" language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
-    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span> </span>
-    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdlib></span></span>
-    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
-    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+                <h1 id="USACO16OPEN-248"><a href="#USACO16OPEN-248" class="headerlink" title="[USACO16OPEN]248"></a>[USACO16OPEN]248</h1><p>标签：动态规划 区间DP</p>
+<hr>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个1*n的地图，在里面玩2048，每次可以合并相邻两个（数值范围1-40），问最大能合出多少。注意合并后的数值并非加倍而是+1，例如2与2合并后的数值为3。</p>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>The first line of input contains N, and the next N lines give the sequence<br>of N numbers at the start of the game.</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>Please output the largest integer Bessie can generate.</p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><p>输入样例#1：<br>4<br>1<br>1<br>1<br>2</p>
+<p>输出样例#1：<br>3</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>首先两个数字相同才能合成，所以如果想让两段数字合并的话，比如首先满足每段数字能合成一个数字，并且这两段合成的数字相同。<br>因此，这就引出了区间DP的思想了。<br>设f[i][j]表示区间[i,j]合成一个数字的值，若无法合成便等于-1。所以我们初始化所有f[i][j]值为-1.<br>则转移方程：<br>$$f[i][j] = max(f[i][j], f[i][k] + 1(f[i][k] == f[k + 1][j]))$$<br>$$ans=max(ans,f[i][j])$$<br>注意我们不能把f[i][j]不合法标志设为0，否则当f[i][k]==0并且f[k][j]==0，那么此时他们两个可以合成为1，但其实这是不合法的。<br>这里可以设置一组HACK数据，大家可以尝试一下：<br>12<br>1 2 1 2 1 2 1 2 1 2 1 2</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> N 510</span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-    <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">int</span> n<span class="token punctuation">,</span> x<span class="token punctuation">,</span> ans <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> f<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> 
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ans <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> len <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> len <span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n <span class="token operator">-</span> len <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> i<span class="token punctuation">;</span> k <span class="token operator">&lt;</span> j<span class="token punctuation">;</span> k <span class="token operator">++</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">==</span> f<span class="token punctuation">[</span>k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+                   f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ans <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> ans<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
             </div>
@@ -398,7 +425,7 @@
                     </span>
                     <a href="https://isecloud.github.io" class="b-link-green">iSecloud's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/04/Hello-World/" class="b-link-green">Hello World</a>
+                    <a href="/2019/05/24/USACO16OPEN-248/" class="b-link-green">[USACO16OPEN]248</a>
                 </p>
             </div>
         </div>
@@ -423,28 +450,28 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/08/Magic-Stones-CodeForces-1110E-（思维-差分）/">
+                <a href="/2019/05/24/P3147-USACO16OPEN-262144/">
                     <div class="card-image">
                         
-                        <img src="https://s2.ax1x.com/2019/03/26/AUPIDP.png" class="responsive-img" alt="Magic Stones CodeForces-1110E">
+                        <img src="https://s2.ax1x.com/2019/03/26/AUAFPS.png" class="responsive-img" alt="[USACO16OPEN]262144">
                         
-                        <span class="card-title">Magic Stones CodeForces-1110E</span>
+                        <span class="card-title">[USACO16OPEN]262144</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Magic Stones CodeForces - 1110E标签： 思维 差分
+                    <div class="summary">[USACO16OPEN]262144标签：动态规划 区间DP
 
-题目描述Grigory has nn magic stones, conveniently numbered from 11 to nn. The char</div>
+题目描述Bessie喜欢在手机上下游戏玩（……），然而她蹄子太大，很难在小小的手机屏幕上面操作。她被她最近玩的一款游戏迷住了，游戏一开始有n个正整数，(2&lt;=n&lt;</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-08
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-24
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/其他算法/" class="post-category" target="_blank">
-                                    其他算法
+                            <a href="/categories/动态规划/" class="post-category" target="_blank">
+                                    动态规划
                                 </a>
                             
                             
@@ -454,12 +481,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/思维/" target="_blank">
-                        <span class="chip bg-color">思维</span>
+                    <a href="/tags/动态规划/" target="_blank">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
-                    <a href="/tags/差分/" target="_blank">
-                        <span class="chip bg-color">差分</span>
+                    <a href="/tags/区间DP/" target="_blank">
+                        <span class="chip bg-color">区间DP</span>
                     </a>
                     
                 </div>
@@ -470,45 +497,46 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/04/Hello-World/">
+                <a href="/2019/05/22/Outer-space-invaders/">
                     <div class="card-image">
                         
+                        <img src="https://s2.ax1x.com/2019/03/26/AUkjvd.png" class="responsive-img" alt="Outer space invaders">
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Outer space invaders</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Hello World！
-这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。
-    #include&lt;cstdio>
-    #include&</div>
+                    <div class="summary">[CERC2014]Outer space invaders标签：动态规划 区间DP
+
+题目描述题目描述 来自外太空的外星人（最终）入侵了地球。保卫自己，或者解体，被他们同化，或者成为食物。迄今为止，我们无法确定。外星人遵循已知的攻击模式。</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                            <a href="/categories/动态规划/" class="post-category" target="_blank">
+                                    动态规划
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/" target="_blank">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/动态规划/" target="_blank">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
+                    <a href="/tags/区间DP/" target="_blank">
+                        <span class="chip bg-color">区间DP</span>
                     </a>
                     
                 </div>
