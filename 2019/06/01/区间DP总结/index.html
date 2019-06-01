@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="莫比乌斯反演总结, iSecloud&#39;s Blog">
-    <meta name="description" content="莫比乌斯反演总结标签： 总结
+    <meta name="keywords" content="区间DP总结, iSecloud&#39;s Blog">
+    <meta name="description" content="区间DP总结标签： 总结
 
-1.序做了一段时间的莫比乌斯反演题目，决定还是总结一下莫比乌斯反演做题方法（套路）吧。便于以后的复习与理解
-2.莫比乌斯函数莫比乌斯函数本质是一个容斥函数，它的定义如下:当$d=1$时$u(d)=1$当$d=">
+序总结一下区间DP的解题套路吧。
+核心思想区间DP顾名思义是通过以“区间”来进行转移。主要是通过小区间合并成大区间，最终得到全局的最优值。一般来说，这类DP具有比较明显的“区间性”，即可以选择区间这个状态进行转移">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>莫比乌斯反演总结 | iSecloud&#39;s Blog</title>
+    <title>区间DP总结 | iSecloud&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +279,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('https://s2.ax1x.com/2019/03/26/AUAA2Q.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        莫比乌斯反演总结
+                        区间DP总结
                     </div>
                 </div>
             </div>
@@ -307,8 +307,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/总结/" target="_blank">
-                                <span class="chip bg-color">总结</span>
+                            <a href="/tags/动态规划/" target="_blank">
+                                <span class="chip bg-color">动态规划</span>
+                            </a>
+                        
+                            <a href="/tags/背包DP/" target="_blank">
+                                <span class="chip bg-color">背包DP</span>
                             </a>
                         
                     </div>
@@ -319,8 +323,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/总结/" class="post-category" target="_blank">
-                                总结
+                            <a href="/categories/动态规划/" class="post-category" target="_blank">
+                                动态规划
                             </a>
                         
                     </div>
@@ -331,21 +335,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-02
+                    2019-06-01
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.4k
+                        985
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        3 分
                     </div>
                     
                 
@@ -361,22 +365,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="莫比乌斯反演总结"><a href="#莫比乌斯反演总结" class="headerlink" title="莫比乌斯反演总结"></a>莫比乌斯反演总结</h1><p>标签： 总结</p>
+                <h1 id="区间DP总结"><a href="#区间DP总结" class="headerlink" title="区间DP总结"></a>区间DP总结</h1><p>标签： 总结</p>
 <hr>
-<h2 id="1-序"><a href="#1-序" class="headerlink" title="1.序"></a>1.序</h2><p>做了一段时间的莫比乌斯反演题目，决定还是总结一下莫比乌斯反演做题方法（套路）吧。便于以后的复习与理解</p>
-<h2 id="2-莫比乌斯函数"><a href="#2-莫比乌斯函数" class="headerlink" title="2.莫比乌斯函数"></a>2.莫比乌斯函数</h2><p>莫比乌斯函数本质是一个容斥函数，它的定义如下:<br>当$d=1$时$u(d)=1$<br>当$d=\prod_{i=1}^{n}pi$时$u(d)=(-1)^n$（pi为质数）<br>当d的任何一个质因子次数&gt;1,$u(d)=0$<br>通俗意思就是当d质因数分解以后，所有的质因子次数都为1的话，那么$u(d)=(-1)^{n}$（n为质因数个数，d=1可以理解为质因数为0）</p>
-<h3 id="相关性质"><a href="#相关性质" class="headerlink" title="相关性质"></a>相关性质</h3><p>$$1.\sum_{d|n}u(d)=[n==1]$$<br>$$2.\sum_{d|n}\frac{u(d)}{d}=\frac{\varphi (n)}{n}$$<br>1公式表示的意思就是只有当n=1的时候左边式子才会为1，否则为0，可以用二项式定理和莫比乌斯函数定义证明<br>2公式需要用狄利克雷函数证明</p>
-<h2 id="3-莫比乌斯反演"><a href="#3-莫比乌斯反演" class="headerlink" title="3.莫比乌斯反演"></a>3.莫比乌斯反演</h2><p>定理：在非负整数域上存在两个函数$F(n)$和$f(n)$，并且满足以下条件：<br>$$F(n)=\sum_{d|n}f(d)$$<br>则<br>$$f(n)=\sum_{d|n}u(d)F(\frac{n}{d})$$<br>以下给出一个简单的证明:<br>$$\sum_{d|n}u(d)F(\frac{n}{d})=\sum_{d|n}u(d)\sum_{i|\frac{n}{d}}f(i)=\sum_{i|n}f(i)\sum_{d|\frac{n}{i}}u(d)=f(n)$$<br>第一个等式利用第一直接变换<br>第二个等式是枚举项的转换，因为两个等式其实就等价于这个：<br>$$\sum_{(i*d)|n}f(i)u(d)$$<br>可以自己举一个栗子更好理解，比如n=12的时候<br>第三个等式就是利用莫比乌斯函数的第一条性质<br>当然，在做题的时候我们更倾向于用下列式子：<br>$$F(n)=\sum_{n|d}f(d)$$<br>$$f(n)=\sum_{n|d}u(\frac{d}{n})F(d)$$<br>这个证明的话需要用狄利克雷卷积，直观理解就是一个为枚举约数，一个枚举倍数</p>
-<h2 id="4-等式变换技巧"><a href="#4-等式变换技巧" class="headerlink" title="4.等式变换技巧"></a>4.等式变换技巧</h2><p>想要做莫比乌斯反演的题目，一般都是需要对原式子进行和式的变换，然后再开始反演；或者是先设$f(x)$和$F(x)$函数对原式反演后在进行和式的变换</p>
-<h3 id="1-求和式子中的位置变换"><a href="#1-求和式子中的位置变换" class="headerlink" title="1.求和式子中的位置变换"></a>1.求和式子中的位置变换</h3><p>对于求和式多项式中一些与枚举无关的变量可以提前：<br>$$\sum_{i=1}^{n}\sum_{j=1}^{m}f(i)g(j)=\sum_{i=1}^{n}f(i)\sum_{j=1}^{m}g(j)$$</p>
-<h3 id="2-更改枚举项"><a href="#2-更改枚举项" class="headerlink" title="2.更改枚举项"></a>2.更改枚举项</h3><p>有时候在化简的时更改枚举项会使得和式变得更简单：<br>比如我们求以下式子:<br>$$\sum_{i=1}^{n}\sum_{j=1}^{m}\sum_{d|gcd(i,j)}d$$<br>我们可以更改枚举项在外层枚举$gcd(i,j)$<br>$$Ans=\sum_{d=1}^{min(n,m)}d\sum_{i=1}^{n}\sum_{j=1}^{m}[d|gcd(i,j)]$$<br>对于后面那一坨式子，我们又可以考虑枚举d的倍数：<br>$$\sum_{i=1}^{n}\sum_{j=1}^{m}[d|gcd(i,j)]=\sum_{i=1}^{\frac{n}{d}}\sum_{j=1}^{\frac{m}{d}}[1|gcd(i,j)]$$<br>对于$1|gcd(i,j)$对于每个gcd肯定都能满足，所以最终我们化简为：<br>$$\sum_{i=1}^{min(n,m)}d\left \lfloor \frac{n}{d} \right \rfloor\left \lfloor \frac{m}{d} \right \rfloor$$<br>对于枚举项的更改，我们一般是考虑<strong>枚举gcd</strong>，<strong>枚举一个数的倍数</strong>，或者<strong>替换一些繁琐的未知数</strong>，例如：</p>
-<p>$$Ans=\sum_{d=1}^{n}\sum_{p=1}^{m}d*u(p)\left \lfloor \frac{n}{dp} \right \rfloor\left \lfloor \frac{m}{dp} \right \rfloor$$</p>
-<p>诸如有两个或多个变量在一起的时候我们可以考虑替换这些变量，对于上述这个式子我们设$T=dp$,则</p>
-<p>$$Ans=\sum_{d=1}^{n}\sum_{p=1}^{m}d*u(p)\left \lfloor \frac{n}{T} \right \rfloor\left \lfloor \frac{m}{T} \right \rfloor$$</p>
-<p>可以发现此时我们如果把T看成一个独立变量，那么它与$d,p$都无关了，于是我们考虑枚举T：<br>$$\sum_{T=1}^{upper\cdot bound}\frac{n}{T}\frac{m}{T}\sum_{d|T}d\ast u(\frac{T}{d})$$<br>机智的童鞋可以发现后面的和式利用莫比乌斯函数性质能再次化简呢:<br>$$\sum_{d|T}d\ast u(\frac{T}{d})=\sum_{d|T}\frac{T}{d}\ast u(d)=\frac{1}{T}\sum_{d|T}\frac{u(d)}{d}=\varphi (T)$$<br>不过在更改枚举项的时候，一定要注意对其他变量的贡献产生了影响，比如：<br>$$\sum_{i=1}^{n}\sum_{j=1}^{m}ij[gcd(i,j)==d]$$<br>考虑更改枚举d的倍数<br>$$\sum_{i=1}^{\frac{n}{d}}\sum_{j=1}^{\frac{m}{d}}(i\ast d)(j\ast d)[gcd(i,j)==1]$$<br>此时的$i,j$需要变成$i\ast d,j\ast d$ 因为我们的i，j变成了枚举d的倍数</p>
-<h3 id="3-对-gcd-i-j-1-的替换"><a href="#3-对-gcd-i-j-1-的替换" class="headerlink" title="3.对$gcd(i,j)==1$的替换"></a>3.对$gcd(i,j)==1$的替换</h3><p>$$gcd(i,j)==1 &lt;=&gt; \sum_{d|gcd(i,j)}u(d)$$<br>证明利用莫比乌斯函数性质即可。</p>
-<h2 id="5-整除分块"><a href="#5-整除分块" class="headerlink" title="5.整除分块"></a>5.整除分块</h2><p>对于一段区间$[l,r]$，对于一个数n，总会存在一段区间使得$\left \lfloor \frac{n}{l} \right \rfloor=\left \lfloor \frac{n}{r} \right \rfloor=k$ 那么对于诸如求下列式子:$\sum_{i=1}^{n}f(\left \lfloor \frac{n}{i} \right \rfloor)$我们就可以把它分割成一小段一小段的区间求解于是便优化了时间复杂度，其中$r=\frac{n}{\left \lfloor \frac{n}{l} \right \rfloor}$证明的话…博客靠的是感性的理解~~</p>
-<h2 id="6-最后的话"><a href="#6-最后的话" class="headerlink" title="6.最后的话"></a>6.最后的话</h2><p>对莫比乌斯反演的总结大概就到这里了，其中不免存在知识点的缺乏与漏洞，以后有新的想法也会及时更新，在此，谢谢以下大佬:<a href="https://blog.csdn.net/shadypi/article/details/80295368" target="_blank" rel="noopener">ShadyPi</a> <a href="https://www.cnblogs.com/peng-ym/p/9446555.html#4182592" target="_blank" rel="noopener">peng-ym</a> 的博客，以上总结也大多参照他们的想法。orzORZ~~</p>
+<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>总结一下区间DP的解题套路吧。</p>
+<h2 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h2><p>区间DP顾名思义是通过以“区间”来进行转移。主要是通过小区间合并成大区间，最终得到全局的最优值。一般来说，这类DP具有比较明显的“区间性”，即可以选择区间这个状态进行转移，并且不同区间转移会获得不同的结果。<br>（口胡成分较多，可以忽略上述描述….）。</p>
+<h2 id="转移类型"><a href="#转移类型" class="headerlink" title="转移类型"></a>转移类型</h2><p>因为是区间DP，所以肯定需要二维来存储区间状态：<br>$dp[i][j]$表示从i到j的最优值（当然通常是这样的，对于不同的题目我们也需要增加其他状态，这就需要我们仁者见仁了。）<br>下面来说说常见的几种转移类型：</p>
+<h3 id="1-枚举断点型"><a href="#1-枚举断点型" class="headerlink" title="1.枚举断点型"></a>1.枚举断点型</h3><p>这类DP主要是可以通过划分不同的断点，来得到不同的值。他们彼此之间的小区间是互不关联的，$[i,j]$可以划分为$[i,k]$和$[k,j]$,并且这两段小区间不会相互影响。经典题目就是石子合并，能量项链等等。<br>代码模板：</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> len <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> len <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//枚举长度</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n <span class="token operator">-</span> len <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//枚举起点</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//得到终点</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> i<span class="token punctuation">;</span> k <span class="token operator">&lt;</span> j<span class="token punctuation">;</span> k <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//枚举断点</span>
+            f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> f<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//转移</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>那么推荐题目：<br><a href="https://isecloud.github.io/2019/05/24/USACO16OPEN-248/">[USACO16OPEN]248</a><br><a href="https://isecloud.github.io/2019/05/22/Outer-space-invaders/">Outer space invaders</a><br><a href="https://isecloud.github.io/2019/05/20/HAOI2008-%E7%8E%A9%E5%85%B7%E5%8F%96%E5%90%8D/">[HAOI2008]玩具取名</a></p>
+<h3 id="2-逐个转移类"><a href="#2-逐个转移类" class="headerlink" title="2.逐个转移类"></a>2.逐个转移类</h3><p>这类DP主要是挨个挨个转移，也像是由小区间慢慢延伸到大区间。由$[i+1,j]$转移到$[i,j]$或者$[i,j+1]$转移到$[i,j]$。这类题目的性质可能是涉及区间的嵌套问题，不能通过枚举断点来实现；或者是逐个转移时候转移方程比较简单，容易实现；或者是题目描述具有较强的“单个操作”这类意思。<br>代码模板:</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> len <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> len <span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> l <span class="token operator">&lt;=</span> n <span class="token operator">-</span> len <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> l <span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> r <span class="token operator">=</span> l <span class="token operator">+</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>    
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>经典题目有：括号匹配，最长回文子序列等。<br>推荐题目：<br><a href="https://isecloud.github.io/2019/05/20/Palindrome-subsequence/">Palindrome subsequence</a></p>
+<h3 id="3-整体划分型"><a href="#3-整体划分型" class="headerlink" title="3.整体划分型"></a>3.整体划分型</h3><p>感觉这类DP题意比较明显，一般是给你一段区间，然后给你一种操作，然后用这种操作把区间划分成m段小区间，然后得到某种权值.<br>这类DP状态设计与前面有所不同:<br>$dp[i][j]$表示前i个元素划分成j段的最优值,通常是这样转移:</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//枚举长度 </span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> m<span class="token punctuation">;</span> j <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//枚举划分段数 </span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> k <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//枚举划分点 </span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token function">value</span><span class="token punctuation">(</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>经典题目：乘积最大,hdu3480 Division（需要用四边形不等式）<br>当然，上面的解法并不是独立的，有的题目可能使得上述解法相互嵌套，比如此题：<a href="https://isecloud.github.io/2019/05/20/String-painter/">String painter</a>。而且区间DP的解法也不仅限于上述解法，还有许多精巧的DP思想和方程（如：<a href="https://isecloud.github.io/2019/05/24/P3147-USACO16OPEN-262144/">USACO16OPEN 262144</a>），这就需要多多积累构造方程的思想了。</p>
+<h2 id="四边形不等式"><a href="#四边形不等式" class="headerlink" title="四边形不等式"></a>四边形不等式</h2><p>提到区间DP，肯定也要介绍一下关于它的优化——四边形不等式。不过博主才疏学浅<del>（low得一逼）</del>，实在是没有怎么学好这个思想，只会套套板子，这里就无法进行总结，只能贴个链接了：<a href="https://blog.csdn.net/noiau/article/details/72514812" target="_blank" rel="noopener">四边形不等式</a></p>
+<h2 id="最后的话"><a href="#最后的话" class="headerlink" title="最后的话"></a>最后的话</h2><p>总结解题套路是为了加强对这个DP思想的理解，但是却不能被固有的思想禁锢，DP这类题目是灵活多变的，遇到题目还是得分析题目性质，思考如何表示状态，如何转移。</p>
 
             </div>
             <hr>
@@ -400,7 +421,7 @@
                     </span>
                     <a href="https://isecloud.github.io" class="b-link-green">iSecloud's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/02/莫比乌斯反演总结/" class="b-link-green">莫比乌斯反演总结</a>
+                    <a href="/2019/06/01/区间DP总结/" class="b-link-green">区间DP总结</a>
                 </p>
             </div>
         </div>
@@ -423,43 +444,48 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/03/18/Polya总结/">
+                <a href="/2019/06/01/区间DP总结/">
                     <div class="card-image">
                         
+                        <img src="https://s2.ax1x.com/2019/03/26/AUAA2Q.png" class="responsive-img" alt="区间DP总结">
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Polya总结">
-                        
-                        <span class="card-title">Polya总结</span>
+                        <span class="card-title">区间DP总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Polya总结标签： 总结
+                    <div class="summary">区间DP总结标签： 总结
 
-1.序Polya定理主要是解决一类翻转染色问题，即本质不同的种类数。（看到题目问题问本质不同的什么什么…就可以联想到Polya定理了）
-2.重要定理这个算法有两个最重要的定理，只要知道这个定理就可以直接套公式辣</div>
+序总结一下区间DP的解题套路吧。
+核心思想区间DP顾名思义是通过以“区间”来进行转移。主要是通过小区间合并成大区间，最终得到全局的最优值。一般来说，这类DP具有比较明显的“区间性”，即可以选择区间这个状态进行转移</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/总结/" class="post-category" target="_blank">
-                                    总结
+                            <a href="/categories/动态规划/" class="post-category" target="_blank">
+                                    动态规划
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/总结/" target="_blank">
-                        <span class="chip bg-color">总结</span>
+                    <a href="/tags/动态规划/" target="_blank">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
+                    <a href="/tags/背包DP/" target="_blank">
+                        <span class="chip bg-color">背包DP</span>
                     </a>
                     
                 </div>
@@ -473,29 +499,28 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/26/SDOI2017-数字表格/">
+                <a href="/2019/05/25/子序列子序列子序列/">
                     <div class="card-image">
                         
-                        <img src="https://s2.ax1x.com/2019/03/26/AUPsHK.png" class="responsive-img" alt="[SDOI2017]数字表格">
+                        <img src="https://s2.ax1x.com/2019/03/26/AUAk8g.png" class="responsive-img" alt="子序列子序列子序列...">
                         
-                        <span class="card-title">[SDOI2017]数字表格</span>
+                        <span class="card-title">子序列子序列子序列...</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">[SDOI2017]数字表格标签： 数学 莫比乌斯
+                    <div class="summary">子序列子序列子序列…标签： 动态规划 背包DP
 
-题目描述Doris刚刚学习了fibonacci数列。用f[i]f[i]f[i]表示数列的第iii项，那么$f[0]=0,f[1]=1,$
-$f[n]=f[n−1]+f[n−2],n≥2$</div>
+题目描述给定 n,m,再给一个含有 n个正整数的序列 a1,a2,…,an问序列 a有多少个非空子序列（子序列的定义为能从原序列中去除任意个位置上的元素后得到的序列）是完美的。一个由正整数组</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/数学/" class="post-category" target="_blank">
-                                    数学
+                            <a href="/categories/动态规划/" class="post-category" target="_blank">
+                                    动态规划
                                 </a>
                             
                             
@@ -505,12 +530,12 @@ $f[n]=f[n−1]+f[n−2],n≥2$</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数学/" target="_blank">
-                        <span class="chip bg-color">数学</span>
+                    <a href="/tags/动态规划/" target="_blank">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
-                    <a href="/tags/莫比乌斯反演/" target="_blank">
-                        <span class="chip bg-color">莫比乌斯反演</span>
+                    <a href="/tags/背包DP/" target="_blank">
+                        <span class="chip bg-color">背包DP</span>
                     </a>
                     
                 </div>
