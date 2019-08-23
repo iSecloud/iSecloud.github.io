@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, iSecloud&#39;s Blog">
-    <meta name="description" content="Hello World！
-这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。
-    #include&amp;lt;cstdio&gt;
-    #include&amp;">
+    <meta name="keywords" content="Insertion Sort, iSecloud&#39;s Blog">
+    <meta name="description" content="Insertion Sort标签： 数学
+
+题目描述戳这里
+题解首先我们可以分$LIS$为$n$和$n-1$两种情况。对于$LIS$为$n$的情况很简单，只能将$1-k$放在前$k$个位置，答案为${A_{k}}^{k}$现在我们来讨论$L">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | iSecloud&#39;s Blog</title>
+    <title>Insertion Sort | iSecloud&#39;s Blog</title>
     <link rel="icon" type="image/jpeg" href="http://pw0y2kmlx.bkt.clouddn.com/IMG_20190810_222222.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +279,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('http://pvujsoqjl.bkt.clouddn.com/44.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        Insertion Sort
                     </div>
                 </div>
             </div>
@@ -307,8 +307,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/test/" target="_blank">
-                                <span class="chip bg-color">test</span>
+                            <a href="/tags/数学/" target="_blank">
+                                <span class="chip bg-color">数学</span>
                             </a>
                         
                     </div>
@@ -319,8 +319,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                随笔
+                            <a href="/categories/数学/" class="post-category" target="_blank">
+                                数学
                             </a>
                         
                     </div>
@@ -331,14 +331,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-04
+                    2019-08-23
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        71
+                        357
                     </div>
                     
 
@@ -361,19 +361,34 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hello-World！"><a href="#Hello-World！" class="headerlink" title="Hello World！"></a>Hello World！</h1><hr>
-<p>这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。</p>
-<pre class=" language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
-    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span> </span>
-    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdlib></span></span>
-    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
-    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+                <h1 id="Insertion-Sort"><a href="#Insertion-Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h1><p>标签： 数学</p>
+<hr>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a href="https://codeforces.com/gym/101955/problem/C" target="_blank" rel="noopener">戳这里</a></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>首先我们可以分$LIS$为$n$和$n-1$两种情况。<br>对于$LIS$为$n$的情况很简单，只能将$1-k$放在前$k$个位置，答案为${A_{k}}^{k}$<br>现在我们来讨论$LIS$为$n-1$的情况。我们可以考虑枚举放在前$k$个位置中的最大值$maxn$<br>1.当$maxn=k$时，那么后$n-k$必须有一个错位，即有一个数不在原来的位置（emmm可以理解为相对位置），通过手画找规律发现这样的方案数为$(n-k-1)^2$<br>2.当$maxn=k+1$时，那么剩下$k-1$个位置有${C_{k+1}}^{k}=k-1$种选法且多出来的那个在后面有$n-k$种插入方式。即方案数为$k*(n-k)$<br>3.当$maxn&gt;k+1$时，此时$k-1$的位置只能选$1,2,3…k-1$且后面全部有序，方案数为$n-k-1$<br>综上所述<br>$Ans = {A_{k}}^{k}+{A_{k}}^{k}(k(n-k)+(n-k-1)+(n-k-1)^2)$</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ll long long</span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-    <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ll t<span class="token punctuation">,</span> n<span class="token punctuation">,</span> k<span class="token punctuation">,</span> p<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ll cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t <span class="token operator">--</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> 
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld%lld%lld"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">,</span> <span class="token operator">&amp;</span>k<span class="token punctuation">,</span> <span class="token operator">&amp;</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ll fac <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        k <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> k<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span>
+            fac <span class="token operator">=</span> fac <span class="token operator">*</span> i <span class="token operator">%</span> p<span class="token punctuation">;</span>
+        ll ans <span class="token operator">=</span> <span class="token punctuation">(</span>fac <span class="token operator">*</span> k <span class="token operator">%</span> p<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> k<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">-</span> k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> fac <span class="token operator">%</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ans <span class="token operator">=</span> ans <span class="token operator">+</span> fac <span class="token operator">+</span> <span class="token punctuation">(</span>fac <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">;</span>
+        ans <span class="token operator">%</span><span class="token operator">=</span> p<span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Case #%lld: %lld\n"</span><span class="token punctuation">,</span> <span class="token operator">++</span> cnt<span class="token punctuation">,</span> ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
             </div>
@@ -398,7 +413,7 @@
                     </span>
                     <a href="https://isecloud.github.io" class="b-link-green">iSecloud's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/04/Hello-World/" class="b-link-green">Hello World</a>
+                    <a href="/2019/08/23/Insertion-Sort/" class="b-link-green">Insertion Sort</a>
                 </p>
             </div>
         </div>
@@ -421,45 +436,44 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/08/Magic-Stones-CodeForces-1110E-（思维-差分）/">
+                <a href="/2019/08/23/Insertion-Sort/">
                     <div class="card-image">
                         
-                        <img src="http://pvujsoqjl.bkt.clouddn.com/MN2sandglass.png" class="responsive-img" alt="Magic Stones CodeForces-1110E">
+                        <img src="http://pvujsoqjl.bkt.clouddn.com/44.png" class="responsive-img" alt="Insertion Sort">
                         
-                        <span class="card-title">Magic Stones CodeForces-1110E</span>
+                        <span class="card-title">Insertion Sort</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Magic Stones CodeForces - 1110E标签： 思维 差分
+                    <div class="summary">Insertion Sort标签： 数学
 
-题目描述Grigory has nn magic stones, conveniently numbered from 11 to nn. The char</div>
+题目描述戳这里
+题解首先我们可以分$LIS$为$n$和$n-1$两种情况。对于$LIS$为$n$的情况很简单，只能将$1-k$放在前$k$个位置，答案为${A_{k}}^{k}$现在我们来讨论$L</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/其他算法/" class="post-category" target="_blank">
-                                    其他算法
+                            <a href="/categories/数学/" class="post-category" target="_blank">
+                                    数学
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/思维/" target="_blank">
-                        <span class="chip bg-color">思维</span>
-                    </a>
-                    
-                    <a href="/tags/差分/" target="_blank">
-                        <span class="chip bg-color">差分</span>
+                    <a href="/tags/数学/" target="_blank">
+                        <span class="chip bg-color">数学</span>
                     </a>
                     
                 </div>
@@ -470,45 +484,47 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/04/Hello-World/">
+                <a href="/2019/08/22/Codeforces-Round-580-Div-2-D/">
                     <div class="card-image">
                         
+                        <img src="http://pvujsoqjl.bkt.clouddn.com/43.png" class="responsive-img" alt="Codeforces Round 580 (Div. 2) D">
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Codeforces Round 580 (Div. 2) D</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Hello World！
-这篇文章用于测试Markdown和代码高亮效果，和代码一样，我们用Hello   World来作为这篇博客的开端吧。希望它能给我带来好运。
-    #include&lt;cstdio>
-    #include&</div>
+                    <div class="summary">Codeforces Round #580 (Div. 2) D标签： Floyd 二进制拆分
+
+题目描述戳这里
+题解首先对于这种涉及二进制的运算我们容易想到二进制拆分，对于每一位我们开一个$vector$，表示有多少个值这一位为$1$，那</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                            <a href="/categories/图论/" class="post-category" target="_blank">
+                                    图论
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/" target="_blank">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/floyd/" target="_blank">
+                        <span class="chip bg-color">floyd</span>
+                    </a>
+                    
+                    <a href="/tags/二进制拆分/" target="_blank">
+                        <span class="chip bg-color">二进制拆分</span>
                     </a>
                     
                 </div>
